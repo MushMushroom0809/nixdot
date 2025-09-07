@@ -213,13 +213,6 @@
   :config
   (setq evil-snipe-scope 'buffer))
 
-(use-package catppuccin-theme
-  :custom-face
-  (default ((t (:background "#11111b" :foreground "#cdd6f4"))))
-  (line-number ((t (:background "#11111b" :foreground "#9399b2"))))
-  (line-number-current-line ((t (:background "#11111b" :foreground "#a6e3a1" :weight bold))))
-  (fringe ((t (:background "#11111b")))))
-
 (use-package doom-themes
   :hook
   (after-init . (lambda () (load-theme 'doom-tokyo-night t))))
