@@ -7,5 +7,9 @@ home/emacs/snippets
 home/emacs/transient
 home/emacs/elpa
 home/emacs/eln-cache
+home/nvim/lazy-lock.json
+home/nvim/lazyvim.json
+home/vim/autoload
+home/vim/plugged
 *.elc
 *.eln
