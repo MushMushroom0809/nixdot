@@ -214,13 +214,15 @@
   (setq evil-snipe-scope 'buffer))
 
 (use-package catppuccin-theme
-  :hook
-  (after-init . (lambda () (load-theme 'catppuccin t)))
   :custom-face
   (default ((t (:background "#11111b" :foreground "#cdd6f4"))))
   (line-number ((t (:background "#11111b" :foreground "#9399b2"))))
   (line-number-current-line ((t (:background "#11111b" :foreground "#a6e3a1" :weight bold))))
   (fringe ((t (:background "#11111b")))))
+
+(use-package doom-themes
+  :hook
+  (after-init . (lambda () (load-theme 'doom-tokyo-night t))))
 
 (use-package doom-modeline
   :hook
@@ -540,6 +542,7 @@
 (use-package web-mode)
 (use-package emmet-mode)
 (use-package markdown-mode)
+(use-package nix-mode)
 (use-package quarto-mode)
 
 (use-package dape
