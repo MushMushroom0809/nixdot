@@ -1,0 +1,11 @@
+result
+.DS_Store
+home/emacs/custom.el
+home/emacs/package-quickstart.el
+home/emacs/places
+home/emacs/snippets
+home/emacs/transient
+home/emacs/elpa
+home/emacs/eln-cache
+*.elc
+*.eln
