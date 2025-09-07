@@ -121,13 +121,6 @@ augroup tool_commentary
         \| autocmd! tool_commentary
 augroup END
 
-Plug 'tpope/vim-surround', { 'on': [] }
-augroup tool_surround
-  autocmd!
-  autocmd BufReadPost * call plug#load('vim-surround')
-        \| autocmd! tool_surround
-augroup END
-
 Plug 'andymass/vim-matchup', { 'on': [] }
 augroup tool_matchup
   autocmd!
@@ -168,17 +161,6 @@ augroup tool_text_object
         \| autocmd! tool_text_object
 augroup END
 
-Plug 'terryma/vim-smooth-scroll', { 'on': [] }
-augroup tool_smooth_scroll
-  autocmd!
-  autocmd BufReadPost * call plug#load('vim-smooth-scroll')
-        \| autocmd! tool_smooth_scroll
-        \| noremap <silent> <C-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-        \| noremap <silent> <C-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-        \| noremap <silent> <C-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
-        \| noremap <silent> <C-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
-augroup END
-
 Plug 'LunarWatcher/auto-pairs', { 'on': [] }
 augroup tool_auto_pairs
   autocmd!
@@ -200,9 +182,6 @@ augroup linting_ale
   autocmd!
   autocmd BufReadPost * call plug#load('ale')
         \| autocmd! linting_ale
-        \| let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
-        \| let g:ale_lint_on_text_changed = 'never'
-        \| let g:ale_lint_on_insert_leave = 0
 augroup END
 
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
@@ -243,21 +222,10 @@ nnoremap <Leader>fr :History<CR>
 nnoremap <Leader>fc :Colors<CR>
 nnoremap <Leader><Leader> :Commands<CR>
 
-Plug 'terryma/vim-expand-region', { 'on': ['<Plug>(expand_region_expand)', '<Plug>(expand_region_shrink)'] }
-map <C-=> <Plug>(expand_region_expand)
-map <C-_> <Plug>(expand_region_shrink)
-
 Plug 'easymotion/vim-easymotion', { 'on': ['<Plug>(easymotion-overwin-line)', '<Plug>(easymotion-overwin-w)'] }
 let g:EasyMotion_do_mapping = 0
 nmap <Leader>gl <Plug>(easymotion-overwin-line)
 nmap <Leader>gw <Plug>(easymotion-overwin-w)
-
-Plug 't9md/vim-choosewin', { 'on': ['<Plug>(choosewin)'] }
-let g:choosewin_overlay_enable = 1
-nmap <C-x>o <Plug>(choosewin)
-
-Plug 'dyng/ctrlsf.vim', { 'on': ['<Plug>CtrlSFPrompt'] }
-nmap <C-c>s <Plug>CtrlSFPrompt
 
 Plug 'prabirshrestha/asyncomplete.vim', { 'on': [] }
 Plug 'prabirshrestha/asyncomplete-buffer.vim', { 'on': [] }
@@ -342,12 +310,8 @@ augroup lsp_install
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': 'go' }
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
-Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'dstein64/vim-startuptime', { 'on': ['StartupTime'] }
-Plug 'tpope/vim-fugitive', { 'on': ['G', 'Git'] }
 Plug 'sbdchd/neoformat', { 'on': ['Neoformat'] }
 
 call plug#end()

@@ -432,30 +432,6 @@
   (dired-mode . diff-hl-dired-mode)
   (after-init . global-diff-hl-show-hunk-mouse-mode))
 
-(use-package hide-mode-line
-  :hook
-  ((dired-sidebar-mode
-    completion-list-mode
-    eshell-mode
-    term-mode
-    symbols-outline-mode) . hide-mode-line-mode))
-
-(use-package solaire-mode
-  :hook
-  (after-init . solaire-global-mode))
-
-(use-package eshell-syntax-highlighting
-  :hook
-  (eshell-mode . eshell-syntax-highlighting-mode))
-
-(use-package highlight-defined
-  :hook
-  (emacs-lisp-mode . highlight-defined-mode))
-
-(use-package highlight-numbers
-  :hook
-  (prog-mode . highlight-numbers-mode))
-
 (use-package symbols-outline
   :hook
   (eglot-mode . (lambda () (setq-local symbols-outline-fetch-fn #'symbols-outline-lsp-fetch)))
@@ -500,21 +476,6 @@
   :config
   (exec-path-from-shell-initialize))
 
-(use-package page-break-lines
-  :hook
-  (emacs-lisp-mode . page-break-lines-mode))
-
-(use-package aggressive-indent
-  :hook
-  (after-init . global-aggressive-indent-mode))
-
-(use-package mode-line-bell
-  :hook
-  (doom-modeline-mode . mode-line-bell-mode))
-
-(use-package expand-region
-  :bind ("C-=" . er/expand-region))
-
 (use-package lua-mode
   :config
   (setq lua-indent-level 2)
@@ -525,21 +486,12 @@
   :hook
   (python-mode . pyvenv-mode))
 
-(use-package ess)
-(use-package vimrc-mode)
 (use-package csv-mode)
 (use-package yaml-mode)
 (use-package json-mode)
 (use-package toml-mode)
-(use-package typescript-mode)
-(use-package web-mode)
-(use-package emmet-mode)
 (use-package markdown-mode)
 (use-package nix-mode)
-(use-package quarto-mode)
-
-(use-package dape
-  :commands (dape))
 
 (provide 'init)
 ;;; init.el ends here
