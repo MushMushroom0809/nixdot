@@ -138,6 +138,7 @@
               upgrade = false;
               cleanup = "none";
             };
+            taps = [ ];
             brews = [
               "mas"
             ];
