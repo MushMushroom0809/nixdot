@@ -167,6 +167,7 @@
             ];
             casks = [
               "discord"
+              "dockdoor"
               "firefox"
               "google-chrome"
               "hiddenbar"
