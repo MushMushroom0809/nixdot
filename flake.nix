@@ -81,6 +81,18 @@
                 TrackpadRightClick = true;
                 TrackpadThreeFingerDrag = true;
               };
+              NSGlobalDomain = {
+                NSAutomaticCapitalizationEnabled = false;
+                NSAutomaticDashSubstitutionEnabled = false;
+                NSAutomaticPeriodSubstitutionEnabled = false;
+                NSAutomaticQuoteSubstitutionEnabled = false;
+                NSAutomaticSpellingCorrectionEnabled = false;
+                NSNavPanelExpandedStateForSaveMode = true;
+              };
+              loginwindow = {
+                GuestEnabled = false;
+                SHOWFULLNAME = true;
+              };
             };
           };
 
@@ -128,6 +140,7 @@
                 "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
                 "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
               ];
+              builders-use-substitutes = true;
             };
             gc = {
               automatic = true;
@@ -199,6 +212,7 @@
               packages = with pkgs; [
                 btop
                 cargo
+                curl
                 direnv
                 emacs
                 fastfetch
@@ -209,13 +223,17 @@
                 neovim
                 nodejs_24
                 p7zip
+                qutebrowser
                 ripgrep
                 vim
                 starship
                 unzip
                 uv
-                xz
                 wezterm
+                wget
+                xz
+                yazi
+                zathura
                 zip
               ];
               file = {
