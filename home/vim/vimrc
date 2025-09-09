@@ -33,132 +33,11 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))| P
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'sheerun/vim-polyglot', { 'on': [] }
-augroup syntax_polyglot
-  autocmd!
-  autocmd InsertEnter * call plug#load('vim-polyglot')
-        \| autocmd! syntax_polyglot
-augroup END
-
-Plug 'ryanoasis/vim-devicons', { 'on': [] }
-augroup ui_devicons
-  autocmd!
-  autocmd BufReadPost * call plug#load('vim-devicons')
-        \| autocmd! ui_devicons
-augroup END
-
-Plug 'morhetz/gruvbox', { 'on': [] }
-augroup ui_gruvbox
-  autocmd!
-  autocmd BufReadPost * call plug#load('gruvbox')
-        \| autocmd! ui_gruvbox
-        \| set background=dark
-        \| set termguicolors
-        \| set cursorline
-        \| set cursorcolumn
-        \| set colorcolumn=80
-        \| let g:gruvbox_contrast_dark = 'hard'
-        \| colorscheme gruvbox
-augroup END
-
-Plug 'itchyny/lightline.vim', { 'on': [] }
-Plug 'shinchu/lightline-gruvbox.vim', { 'on': [] }
-augroup ui_lightline
-  autocmd!
-  autocmd BufReadPost * call plug#load('lightline.vim', 'lightline-gruvbox.vim')
-        \| autocmd! ui_lightline
-        \| set laststatus=2
-        \| let g:lightline = {}
-        \| let g:lightline.colorscheme = 'gruvbox'
-augroup END
-
-Plug 'ap/vim-buftabline', { 'on': [] }
-augroup ui_buftabline
-  autocmd!
-  autocmd BufReadPost * call plug#load('vim-buftabline')
-        \| autocmd! ui_buftabline
-augroup END
-
-Plug 'itchyny/vim-cursorword', { 'on': [] }
-augroup ui_cursorword
-  autocmd!
-  autocmd BufReadPost * call plug#load('vim-cursorword')
-        \| autocmd! ui_cursorword
-        \| let g:cursorword_delay = 200
-        \| highlight default CursorWord ctermbg=237 ctermfg=223
-augroup END
-
-Plug 'ntpeters/vim-better-whitespace', { 'on': [] }
-augroup ui_better_whitespace
-  autocmd!
-  autocmd BufReadPost * call plug#load('vim-better-whitespace')
-        \| autocmd! ui_better_whitespace
-augroup END
-
-Plug 'Yggdroot/indentLine', { 'on': [] }
-augroup ui_indentline
-  autocmd!
-  autocmd BufReadPost * call plug#load('indentLine')
-        \| autocmd! ui_indentline
-        \| let g:indentLine_char_list = ['│']
-        \| set expandtab
-        \| set tabstop=2
-        \| set shiftwidth=2
-        \| IndentLinesEnable
-augroup END
-
-Plug 'wincent/terminus', { 'on': [] }
-augroup ui_terminus
-  autocmd!
-  autocmd BufReadPost * call plug#load('terminus')
-        \| autocmd! ui_terminus
-augroup END
-
 Plug 'tpope/vim-commentary', { 'on': [] }
 augroup tool_commentary
   autocmd!
   autocmd BufReadPost * call plug#load('vim-commentary')
         \| autocmd! tool_commentary
-augroup END
-
-Plug 'andymass/vim-matchup', { 'on': [] }
-augroup tool_matchup
-  autocmd!
-  autocmd BufReadPost * call plug#load('vim-matchup')
-        \| autocmd! tool_matchup
-augroup END
-
-Plug 'airblade/vim-gitgutter', { 'on': [] }
-augroup tool_gitgutter
-  autocmd!
-  autocmd BufReadPost * call plug#load('vim-gitgutter')
-        \| autocmd! tool_gitgutter
-augroup END
-
-Plug 'machakann/vim-highlightedyank', { 'on': [] }
-augroup tool_highlightedyank
-  autocmd!
-  autocmd BufReadPost * call plug#load('vim-highlightedyank')
-        \| autocmd! tool_highlightedyank
-        \| let g:highlightedyank_highlight_duration = 1500
-augroup END
-
-Plug 'ap/vim-css-color', { 'on': [] }
-augroup tool_css_color
-  autocmd!
-  autocmd BufReadPre * call plug#load('vim-css-color')
-        \| autocmd! tool_css_color
-augroup END
-
-Plug 'kana/vim-textobj-user', { 'on': [] }
-Plug 'kana/vim-textobj-indent', { 'on': [] }
-Plug 'kana/vim-textobj-function', { 'on': [] }
-Plug 'glts/vim-textobj-comment', { 'on': [] }
-Plug 'wellle/targets.vim', { 'on': [] }
-augroup tool_text_object
-  autocmd!
-  autocmd BufReadPost * call plug#load('vim-textobj-user', 'vim-textobj-indent', 'vim-textobj-function', 'vim-textobj-comment', 'targets.vim')
-        \| autocmd! tool_text_object
 augroup END
 
 Plug 'LunarWatcher/auto-pairs', { 'on': [] }
@@ -167,21 +46,6 @@ augroup tool_auto_pairs
   autocmd InsertEnter * call plug#load('auto-pairs')
         \| autocmd! tool_auto_pairs
         \| call autopairs#AutoPairsTryInit()
-augroup END
-
-Plug 'luochen1990/rainbow', { 'on': [] }
-augroup tool_rainbow
-  autocmd!
-  autocmd InsertEnter * call plug#load('rainbow')
-        \| autocmd! tool_rainbow
-        \| call rainbow_main#toggle()
-augroup END
-
-Plug 'dense-analysis/ale', { 'on': [] }
-augroup linting_ale
-  autocmd!
-  autocmd BufReadPost * call plug#load('ale')
-        \| autocmd! linting_ale
 augroup END
 
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
@@ -198,19 +62,6 @@ let g:NERDTreeWinSize = 25
 let g:NERDTreeShowHidden = 1
 nnoremap <Leader>tn :NERDTreeToggle<CR>
 
-Plug 'mbbill/undotree', { 'on': ['UndotreeToggle'] }
-nnoremap <Leader>tu :UndotreeToggle<CR>
-
-Plug 'thinca/vim-quickrun', { 'on': ['QuickRun'] }
-nnoremap <Leader>tr :QuickRun<CR>
-
-Plug 'mtth/scratch.vim', { 'on': ['Scratch'] }
-let g:scratch_horizontal = 1
-let g:scratch_top = 0
-let g:scratch_height = 15
-let g:scratch_no_mappings = 1
-nnoremap <Leader>ts :Scratch<CR>
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim', { 'on': ['Files', 'Buffers', 'Colors', 'Lines', 'BLines', 'History', 'Commands', 'Rg'] }
 nnoremap <Leader>ff :Files<CR>
@@ -221,11 +72,6 @@ nnoremap <Leader>fs :BLines<CR>
 nnoremap <Leader>fr :History<CR>
 nnoremap <Leader>fc :Colors<CR>
 nnoremap <Leader><Leader> :Commands<CR>
-
-Plug 'easymotion/vim-easymotion', { 'on': ['<Plug>(easymotion-overwin-line)', '<Plug>(easymotion-overwin-w)'] }
-let g:EasyMotion_do_mapping = 0
-nmap <Leader>gl <Plug>(easymotion-overwin-line)
-nmap <Leader>gw <Plug>(easymotion-overwin-w)
 
 Plug 'prabirshrestha/asyncomplete.vim', { 'on': [] }
 Plug 'prabirshrestha/asyncomplete-buffer.vim', { 'on': [] }
@@ -309,9 +155,5 @@ augroup lsp_install
   autocmd!
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
-
-Plug 'chrisbra/csv.vim', { 'for': 'csv' }
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'sbdchd/neoformat', { 'on': ['Neoformat'] }
 
 call plug#end()
