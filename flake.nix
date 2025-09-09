@@ -172,8 +172,12 @@
               "discord"
               "dockdoor"
               "firefox"
+              "font-sf-compact"
+              "font-sf-mono-nerd-font-ligaturized"
               "google-chrome"
+              "hammerspoon"
               "hiddenbar"
+              "karabiner-elements"
               "keka"
               "microsoft-edge"
               "microsoft-word"
@@ -187,6 +191,9 @@
             masApps = {
               "LINE" = 539883307;
               "adguard-for-safari" = 1440147259;
+              "keynote" = 409183694;
+              "pages" = 409201541;
+              "numbers" = 409203825;
             };
           };
 
