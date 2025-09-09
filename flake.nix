@@ -184,6 +184,7 @@
               "microsoft-excel"
               "microsoft-powerpoint"
               "raycast"
+              "rectangle"
               "sf-symbols"
               "stats"
               "visual-studio-code"
