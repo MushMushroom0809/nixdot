@@ -171,6 +171,7 @@
               "mas"
             ];
             casks = [
+              "alt-tab"
               "discord"
               "dockdoor"
               "firefox"
@@ -234,12 +235,15 @@
                 fzf
                 go
                 lsd
-                nixfmt-rfc-style
+                neofetch
                 neovim
+                nixfmt-rfc-style
                 nodejs_24
                 p7zip
                 qutebrowser
                 ripgrep
+                ripgrep-all
+                ruby
                 vim
                 starship
                 unzip
@@ -249,6 +253,7 @@
                 xz
                 yazi
                 zathura
+                zig
                 zip
                 zsh
               ];

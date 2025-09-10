@@ -14,8 +14,6 @@
 
 ;;; Code:
 
-;; [[ BUILTIN ]]
-
 (use-package use-package
   :custom
   (use-package-always-ensure t)
@@ -142,8 +140,6 @@
   :config
   (setq tab-always-indent 'complete))
 
-;; [[ MELPA, ELPA ]]
-
 (use-package evil
   :init
   (setq evil-want-keybinding nil)
@@ -183,10 +179,6 @@
   (setq evil-goggles-async-duration 0.900)
   (setq evil-goggles-duration 1.500)
   (evil-goggles-use-diff-faces))
-
-(use-package evil-surround
-  :hook
-  (evil-mode . global-evil-surround-mode))
 
 (use-package evil-visualstar
   :hook
@@ -232,10 +224,6 @@
 (use-package colorful-mode
   :hook
   (prog-mode . colorful-mode))
-
-(use-package color-identifiers-mode
-  :hook
-  (after-init . global-color-identifiers-mode))
 
 (use-package indent-bars
   :hook ((prog-mode yaml-mode) . indent-bars-mode)
@@ -404,19 +392,6 @@
           ("BUG" error bold)
           ("XXX" font-lock-constant-face bold))))
 
-(use-package dired-sidebar
-  :hook
-  (dired-sidebar-mode . (lambda () (display-line-numbers-mode -1)))
-  :commands (dired-sidebar-show-sidebar))
-
-(use-package quickrun
-  :commands (quickrun)
-  :config
-  (setq quickrun-focus-p nil))
-
-(use-package scratch
-  :commands (scratch))
-
 (use-package wgrep
   :bind
   (:map grep-mode-map
@@ -448,18 +423,6 @@
   :hook
   (prog-mode . symbol-overlay-mode))
 
-(use-package beacon
-  :hook
-  (after-init . beacon-mode)
-  :config
-  (setq beacon-size 60)
-  (setq beacon-color "#f38ba8")
-  (setq beacon-blink-duration 0.8)
-  (setq beacon-blink-delay 0.8)
-  (setq beacon-blink-when-window-scrolls t)
-  (setq beacon-blink-when-window-changes t)
-  (setq beacon-blink-when-point-moves t))
-
 (use-package xclip
   :hook
   (after-init . xclip-mode))
@@ -468,19 +431,10 @@
   :hook
   (after-init . gcmh-mode))
 
-(use-package flymake-popon
-  :hook (flymake-mode . flymake-popon-mode))
-
 (use-package exec-path-from-shell
   :defer 10
   :config
   (exec-path-from-shell-initialize))
-
-(use-package lua-mode
-  :config
-  (setq lua-indent-level 2)
-  (setq lua-indent-nested-block-content-align nil)
-  (setq lua-indent-close-paren-align nil))
 
 (use-package pyvenv
   :hook
