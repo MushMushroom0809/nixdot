@@ -1,7 +1,7 @@
 # [[ macOS ]]
 # > sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
-# > sudo nix run nix-darwin --extra-experimental-features "nix-command flakes"  -- switch --flake ~/nixdot#cya
-# > sudo darwin-rebuild --flake ~/nixdot#cya switch
+# > sudo nix run nix-darwin --extra-experimental-features "nix-command flakes"  -- switch --flake ~/nixdot#m4pro
+# > sudo darwin-rebuild --flake ~/nixdot#m4pro switch
 # [[ NixOS ]]
 # > sudo nixos-rebuild switch --flake ~/nixdot#nixos-vm
 {
@@ -60,7 +60,7 @@
     }:
     {
       darwinConfigurations = {
-        "cya" = nix-darwin.lib.darwinSystem {
+        "m4pro" = nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           specialArgs = { inherit self inputs; };
           modules = [ ./hosts/m4pro/default.nix ];
