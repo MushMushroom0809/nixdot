@@ -1,6 +1,8 @@
+# [[ macOS ]]
 # > sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
 # > sudo nix run nix-darwin --extra-experimental-features "nix-command flakes"  -- switch --flake ~/nixdot#cya
 # > sudo darwin-rebuild --flake ~/nixdot#cya switch
+# [[ NixOS ]]
 # > sudo nixos-rebuild switch --flake ~/nixdot#nixos-vm
 {
   description = "A configuration for both macOS and NixOS";
