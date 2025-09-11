@@ -3,7 +3,7 @@
   imports = [
     inputs.nix-homebrew.darwinModules.nix-homebrew
     inputs.home-manager.darwinModules.home-manager
-    ../../home/cya/default.nix
+    ../../home/default.nix
   ];
 
   nixpkgs = {
