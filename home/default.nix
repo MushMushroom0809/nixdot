@@ -5,7 +5,7 @@
   home-manager.users.cya = {
     home = {
       username = "cya";
-      homeDirectory = "/Users/cya";
+      homeDirectory = if pkgs.stdenv.isDarwin then "/Users/cya" else "/home/cya";
       stateVersion = "25.05";
       packages = with pkgs; [
         btop

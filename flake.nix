@@ -1,6 +1,7 @@
 # > sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
 # > sudo nix run nix-darwin --extra-experimental-features "nix-command flakes"  -- switch --flake ~/nixdot#cya
 # > sudo darwin-rebuild --flake ~/nixdot#cya switch
+# > sudo nixos-rebuild switch --flake ~/nixdot#nixos-vm
 {
   description = "A configuration for both macOS and NixOS";
 
@@ -61,6 +62,13 @@
           system = "aarch64-darwin";
           specialArgs = { inherit self inputs; };
           modules = [ ./hosts/m4pro/default.nix ];
+        };
+      };
+      nixosConfigurations = {
+        "nixos-vm" = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit self inputs; };
+          modules = [ ./hosts/nixos-vm/default.nix ];
         };
       };
     };
