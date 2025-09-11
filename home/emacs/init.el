@@ -180,31 +180,6 @@
   (setq evil-goggles-duration 1.500)
   (evil-goggles-use-diff-faces))
 
-(use-package evil-visualstar
-  :hook
-  (evil-mode . global-evil-visualstar-mode))
-
-(use-package evil-args
-  :after (evil)
-  :bind
-  (:map evil-inner-text-objects-map
-	("a" . evil-inner-arg))
-  (:map evil-outer-text-objects-map
-	("a" . evil-outer-arg))
-  (:map evil-normal-state-map
-	("L" . evil-forward-arg)
-	("H" . evil-backward-arg))
-  (:map evil-motion-state-map
-	("L" . evil-forward-arg)
-	("H" . evil-backward-arg)))
-
-(use-package evil-snipe
-  :hook
-  (evil-mode . evil-snipe-mode)
-  (evil-mode . evil-snipe-override-mode)
-  :config
-  (setq evil-snipe-scope 'buffer))
-
 (use-package doom-themes
   :hook
   (after-init . (lambda () (load-theme 'doom-tokyo-night t))))
@@ -214,12 +189,7 @@
   (after-init . doom-modeline-mode)
   :config
   (setq doom-modeline-height 25)
-  (setq doom-modeline-bar-width 5)
-  (setq doom-modeline-minor-modes t))
-
-(use-package minions
-  :hook
-  (doom-modeline-mode . minions-mode))
+  (setq doom-modeline-bar-width 5))
 
 (use-package colorful-mode
   :hook
@@ -407,13 +377,6 @@
   (dired-mode . diff-hl-dired-mode)
   (after-init . global-diff-hl-show-hunk-mouse-mode))
 
-(use-package symbols-outline
-  :hook
-  (eglot-mode . (lambda () (setq-local symbols-outline-fetch-fn #'symbols-outline-lsp-fetch)))
-  :config
-  (setq symbols-outline-window-position 'right)
-  (symbols-outline-follow-mode))
-
 (use-package symbol-overlay
   :bind
   (("M-i" . symbol-overlay-put)
@@ -430,11 +393,6 @@
 (use-package gcmh
   :hook
   (after-init . gcmh-mode))
-
-(use-package exec-path-from-shell
-  :defer 10
-  :config
-  (exec-path-from-shell-initialize))
 
 (use-package pyvenv
   :hook
