@@ -45,9 +45,19 @@
         ".config/wezterm/wezterm.lua".source = ./wezterm/wezterm.lua;
         ".emacs.d/init.el".source = ./emacs/init.el;
         ".vim/vimrc".source = ./vim/vimrc;
-        "Library/Application Support/Code/User/settings.json".source = ./vscode/settings.json;
-        "Library/Application Support/Code/User/keybindings.json".source = ./vscode/keybindings.json;
-      };
+      }
+      // (
+        if pkgs.stdevn.isDarwin then
+          {
+            "Library/Application Support/Code/User/settings.json".source = ./vscode/settings.json;
+            "Library/Application Support/Code/User/keybindings.json".source = ./vscode/keybindings.json;
+          }
+        else
+          {
+            ".config/Code/User/settings.json".source = ./vscode/settings.json;
+            ".config/Code/User/keybindings.json".source = ./vscode/keybindings.json;
+          }
+      );
     };
     programs = {
       home-manager = {
