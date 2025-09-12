@@ -88,9 +88,6 @@
     pulseaudio = {
       enable = true;
     };
-    rtkit = {
-      enable = true;
-    };
     pipewire = {
       enable = true;
       alsa = {
@@ -100,6 +97,12 @@
       pulse = {
         enable = true;
       };
+    };
+  };
+
+  security = {
+    rtkit = {
+      enable = true;
     };
   };
 
