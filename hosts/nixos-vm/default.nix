@@ -86,7 +86,7 @@
       enable = true;
     };
     pulseaudio = {
-      enable = true;
+      enable = false;
     };
     pipewire = {
       enable = true;
