@@ -56,12 +56,6 @@ let g:which_key_fallback_to_native_key = 1
 nnoremap <silent> <Leader> :<C-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <Localleader> :<C-u>WhichKey ','<CR>
 
-Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle'] }
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': ['NERDTreeToggle'] }
-let g:NERDTreeWinSize = 25
-let g:NERDTreeShowHidden = 1
-nnoremap <Leader>tn :NERDTreeToggle<CR>
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim', { 'on': ['Files', 'Buffers', 'Colors', 'Lines', 'BLines', 'History', 'Commands', 'Rg'] }
 nnoremap <Leader>ff :Files<CR>

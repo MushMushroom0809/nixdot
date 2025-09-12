@@ -180,17 +180,6 @@
   (setq evil-goggles-duration 1.500)
   (evil-goggles-use-diff-faces))
 
-(use-package doom-themes
-  :hook
-  (after-init . (lambda () (load-theme 'doom-tokyo-night t))))
-
-(use-package doom-modeline
-  :hook
-  (after-init . doom-modeline-mode)
-  :config
-  (setq doom-modeline-height 25)
-  (setq doom-modeline-bar-width 5))
-
 (use-package colorful-mode
   :hook
   (prog-mode . colorful-mode))
@@ -328,16 +317,6 @@
 (use-package yasnippet-snippets
   :after yasnippet)
 
-(use-package ace-window
-  :bind
-  (([remap other-window] . ace-window))
-  :config
-  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
-
-(use-package winum
-  :hook
-  (after-init . winum-mode))
-
 (use-package tab-line-nerd-icons
   :hook
   (global-tab-line-mode . tab-line-nerd-icons-global-mode))
@@ -385,14 +364,6 @@
    ("M-g r" . symbol-overlay-remove-all))
   :hook
   (prog-mode . symbol-overlay-mode))
-
-(use-package xclip
-  :hook
-  (after-init . xclip-mode))
-
-(use-package gcmh
-  :hook
-  (after-init . gcmh-mode))
 
 (use-package pyvenv
   :hook
