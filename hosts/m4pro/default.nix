@@ -1,4 +1,9 @@
-{ self, inputs, ... }:
+{
+  self,
+  inputs,
+  username,
+  ...
+}:
 {
   imports = [
     inputs.nix-homebrew.darwinModules.nix-homebrew
@@ -13,13 +18,13 @@
     };
   };
 
-  users.users.cya = {
-    home = "/Users/cya";
-    description = "cya";
+  users.users."${username}" = {
+    home = "/Users/${username}";
+    description = "${username}";
   };
 
   system = {
-    primaryUser = "cya";
+    primaryUser = "${username}";
     stateVersion = 6;
     configurationRevision = self.rev or self.dirtyRev or null;
     defaults = {
@@ -86,7 +91,7 @@
     enable = true;
     settings = {
       auto-optimise-store = false;
-      trusted-users = [ "cya" ];
+      trusted-users = [ "${username}" ];
       builders-use-substitutes = true;
     };
     gc = {
@@ -141,7 +146,7 @@
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
-    user = "cya";
+    user = "${username}";
     taps = {
       "homebrew/homebrew-core" = inputs.homebrew-core;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;

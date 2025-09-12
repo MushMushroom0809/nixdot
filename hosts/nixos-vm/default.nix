@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  username,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -92,9 +97,9 @@
     };
   };
 
-  users.users.cya = {
+  users.users."${username}" = {
     isNormalUser = true;
-    description = "cya";
+    description = "${username}";
     extraGroups = [
       "networkmanager"
       "wheel"

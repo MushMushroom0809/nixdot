@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.cya = {
+  home-manager.users."${username}" = {
     home = {
-      username = "cya";
-      homeDirectory = if pkgs.stdenv.isDarwin then "/Users/cya" else "/home/cya";
+      username = "${username}";
+      homeDirectory = if pkgs.stdenv.isDarwin then "/Users/${username}" else "/home/${username}";
       stateVersion = "25.05";
       packages = with pkgs; [
         btop
@@ -16,6 +16,7 @@
         fastfetch
         fzf
         go
+        lazygit
         lsd
         neofetch
         neovim

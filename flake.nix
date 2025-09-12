@@ -58,18 +58,21 @@
       home-manager,
       ...
     }:
+    let
+      username = "cya";
+    in
     {
       darwinConfigurations = {
         "m4pro" = nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
-          specialArgs = { inherit self inputs; };
+          specialArgs = { inherit self inputs username; };
           modules = [ ./hosts/m4pro/default.nix ];
         };
       };
       nixosConfigurations = {
         "nixos-vm" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit self inputs; };
+          specialArgs = { inherit self inputs username; };
           modules = [ ./hosts/nixos-vm/default.nix ];
         };
       };
