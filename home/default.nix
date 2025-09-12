@@ -47,7 +47,7 @@
         ".vim/vimrc".source = ./vim/vimrc;
       }
       // (
-        if pkgs.stdevn.isDarwin then
+        if pkgs.stdenv.isDarwin then
           {
             "Library/Application Support/Code/User/settings.json".source = ./vscode/settings.json;
             "Library/Application Support/Code/User/keybindings.json".source = ./vscode/keybindings.json;
