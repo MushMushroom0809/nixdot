@@ -11,17 +11,21 @@
     ../../home/default.nix
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix = {
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+    };
+  };
 
   boot = {
     loader = {
       systemd-boot = {
         enable = true;
       };
-      efil = {
+      efi = {
         canTouchEfiVariables = true;
       };
     };
@@ -64,6 +68,8 @@
         gdm = {
           enable = true;
         };
+      };
+      desktopManager = {
         gnome = {
           enable = true;
         };
@@ -107,8 +113,18 @@
     packages = with pkgs; [ ];
   };
 
-  programs.firefox.enable = true;
-  nixpkgs.config.allowUnfree = true;
+  programs = {
+    firefox = {
+      enable = true;
+    };
+  };
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     git
     just
