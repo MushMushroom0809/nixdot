@@ -60,19 +60,20 @@
     }:
     let
       username = "cya";
+      specialArgs = { inherit self inputs username; };
     in
     {
       darwinConfigurations = {
         "m4pro" = nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
-          specialArgs = { inherit self inputs username; };
+          specialArgs = specialArgs;
           modules = [ ./hosts/m4pro/default.nix ];
         };
       };
       nixosConfigurations = {
         "nixos-vm" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = { inherit self inputs username; };
+          specialArgs = specialArgs;
           modules = [ ./hosts/nixos-vm/default.nix ];
         };
       };

@@ -132,6 +132,7 @@
       "rectangle"
       "sf-symbols"
       "stats"
+      "utm"
       "visual-studio-code"
     ];
     masApps = {
