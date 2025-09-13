@@ -16,8 +16,22 @@
         fastfetch
         fzf
         go
+        git
+        just
         lazygit
         lsd
+        mkalias
+        nerd-fonts.hack
+        nerd-fonts.ubuntu
+        nerd-fonts.iosevka
+        nerd-fonts.monaspace
+        nerd-fonts.meslo-lg
+        nerd-fonts.fira-mono
+        nerd-fonts.blex-mono
+        nerd-fonts.fira-code
+        nerd-fonts.roboto-mono
+        nerd-fonts.ubuntu-mono
+        nerd-fonts.jetbrains-mono
         neofetch
         neovim
         nixfmt-rfc-style
@@ -34,6 +48,8 @@
         uv
         wezterm
         wget
+        wqy_zenhei
+        wqy_microhei
         xz
         yazi
         zathura

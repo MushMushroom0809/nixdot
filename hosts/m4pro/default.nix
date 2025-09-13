@@ -66,26 +66,15 @@
     };
   };
 
-  security.pam.services.sudo_local.touchIdAuth = true;
-
-  environment.systemPackages = with inputs.nixpkgs.legacyPackages.aarch64-darwin; [
-    git
-    just
-    mkalias
-  ];
-  environment.shells = with inputs.nixpkgs.legacyPackages.aarch64-darwin; [ zsh ];
-  environment.variables = {
-    EDITOR = "nvim";
+  security = {
+    pam = {
+      services = {
+        sudo_local = {
+          touchIdAuth = true;
+        };
+      };
+    };
   };
-
-  fonts.packages = with inputs.nixpkgs.legacyPackages.aarch64-darwin; [
-    nerd-fonts.hack
-    nerd-fonts.fira-code
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.symbols-only
-    wqy_zenhei
-    wqy_microhei
-  ];
 
   nix = {
     enable = true;
@@ -100,9 +89,12 @@
     };
   };
 
-  programs.zsh.enable = true;
+  programs = {
+    zsh = {
+      enable = true;
+    };
+  };
 
-  # Homebrew 設定
   homebrew = {
     enable = true;
     onActivation = {
