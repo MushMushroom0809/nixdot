@@ -1,6 +1,6 @@
 * Nix based configuration
 
-** NixOS
+** macOS
 
 #+begin_src sh
 sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
@@ -8,7 +8,7 @@ sudo nix run nix-darwin --extra-experimental-features "nix-command flakes"  -- s
 sudo darwin-rebuild --flake ~/nixdot#m4pro switch
 #+end_src
 
-** macOS
+** NixOS
 
 #+begin_src sh
 sudo nixos-rebuild switch --flake ~/nixdot#nixos-vm
