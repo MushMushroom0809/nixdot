@@ -1,4 +1,9 @@
-{ config, pkgs, username, ... }:
+{
+  config,
+  pkgs,
+  username,
+  ...
+}:
 {
   home = {
     username = "${username}";
@@ -39,6 +44,7 @@
       ripgrep
       ripgrep-all
       ruby
+      starship
       vim
       unzip
       uv
@@ -86,6 +92,20 @@
         vim = "nvim";
         em = "emacs -nw";
         tree = "lsd -al --tree";
+      };
+    };
+    starship = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableInteractive = true;
+      settings = {
+        add_newline = false;
+        scan_timeout = 10;
+        character = {
+          success_symbol = "➜";
+          error_symbol = "➜";
+        };
       };
     };
   };
