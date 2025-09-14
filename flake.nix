@@ -1,18 +1,3 @@
-# [[ macOS ]]
-# > sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
-# > sudo nix run nix-darwin --extra-experimental-features "nix-command flakes"  -- switch --flake ~/nixdot#m4pro
-# > sudo darwin-rebuild --flake ~/nixdot#m4pro switch
-
-# [[ NixOS ]]
-# > sudo nixos-rebuild switch --flake ~/nixdot#nixos-vm
-
-# [[ home-manager ]]
-# > nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-# > nix-channel --update
-# > nix-shell '<home-manager>' -A install
-# > home-manager switch --flake ~/nixdot#cya@m4pro
-
-# [[ Code ]]
 {
   description = "A configuration for both macOS and NixOS";
 
