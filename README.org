@@ -3,7 +3,7 @@
 ** macOS
 
 1. Install Nix package manager on macOS.
-2. Install `nix-darwin` and `darwin-rebuild` command on macOS.
+2. Install =nix-darwin= and =darwin-rebuild= command on macOS.
 
 #+begin_src sh
 sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
