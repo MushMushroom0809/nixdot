@@ -119,7 +119,6 @@
   :ensure nil
   :hook
   (after-init . save-place-mode)
-  (after-init . global-tab-line-mode)
   (prog-mode . electric-pair-mode))
 
 (use-package flymake
@@ -215,10 +214,6 @@
   :hook
   (vertico-mode . marginalia-mode))
 
-(use-package nerd-icons-completion
-  :hook
-  (marginalia-mode . nerd-icons-completion-marginalia-setup))
-
 (use-package corfu
   :hook
   (after-init . global-corfu-mode)
@@ -235,10 +230,6 @@
 (use-package corfu-terminal
   :when (display-graphic-p)
   :hook (global-corfu-mode . corfu-terminal-mode))
-
-(use-package nerd-icons-corfu
-  :after corfu
-  :init (add-to-list 'corfu-margin-formatters #'nerd-icons-corfu-formatter))
 
 (use-package cape
   :init
@@ -298,14 +289,6 @@
   :hook
   (prog-mode . rainbow-delimiters-mode))
 
-(use-package nerd-icons-ibuffer
-  :hook
-  (ibuffer-mode . nerd-icons-ibuffer-mode))
-
-(use-package nerd-icons-dired
-  :hook
-  (dired-mode . nerd-icons-dired-mode))
-
 (use-package diredfl
   :hook
   (dired-mode . diredfl-mode))
@@ -316,10 +299,6 @@
 
 (use-package yasnippet-snippets
   :after yasnippet)
-
-(use-package tab-line-nerd-icons
-  :hook
-  (global-tab-line-mode . tab-line-nerd-icons-global-mode))
 
 (use-package avy
   :bind
