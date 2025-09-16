@@ -45,7 +45,6 @@
       ripgrep-all
       ruby
       starship
-      vim
       unzip
       uv
       wezterm
@@ -63,7 +62,6 @@
       ".config/nvim/init.lua".source = ./nvim/init.lua;
       ".config/wezterm/wezterm.lua".source = ./wezterm/wezterm.lua;
       ".emacs.d/init.el".source = ./emacs/init.el;
-      ".vim/vimrc".source = ./vim/vimrc;
     }
     // (
       if pkgs.stdenv.isDarwin then
