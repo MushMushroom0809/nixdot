@@ -103,26 +103,15 @@
     taps = [ ];
     brews = [ "mas" ];
     casks = [
-      "alt-tab"
-      "discord"
-      "dockdoor"
       "firefox"
-      "font-sf-compact"
-      "font-sf-mono-nerd-font-ligaturized"
       "google-chrome"
-      "hammerspoon"
-      "hiddenbar"
-      "karabiner-elements"
       "keka"
       "microsoft-edge"
       "microsoft-word"
       "microsoft-excel"
       "microsoft-powerpoint"
       "raycast"
-      "rectangle"
-      "sf-symbols"
       "stats"
-      "utm"
       "visual-studio-code"
     ];
     masApps = {
