@@ -11,7 +11,6 @@
     stateVersion = "25.05";
     packages = with pkgs; [
       btop
-      cmake
       direnv
       emacs
       fastfetch
