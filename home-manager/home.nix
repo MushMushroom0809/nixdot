@@ -11,6 +11,7 @@
     stateVersion = "25.05";
     packages = with pkgs; [
       btop
+      cmake
       direnv
       emacs
       fastfetch
@@ -23,9 +24,7 @@
       nixfmt-rfc-style
       ripgrep
       ripgrep-all
-      ruby
       uv
-      wget
       zsh
     ];
   };

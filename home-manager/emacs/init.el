@@ -338,6 +338,11 @@
   :hook
   (prog-mode . symbol-overlay-mode))
 
+(use-package eat
+  :commands (eat)
+  :custom
+  (eat-term-name "xterm-256color"))
+
 (use-package pyvenv
   :hook
   (python-mode . pyvenv-mode))
