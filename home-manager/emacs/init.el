@@ -2,16 +2,6 @@
 
 ;;; Commentary:
 
-;;; References:
-;; https://github.com/seagle0128/.emacs.d
-;; https://github.com/bbatsov/prelude
-;; https://github.com/redguardtoo/emacs.d
-;; https://github.com/manateelazycat/lazycat-emacs
-;; https://github.com/MiniApollo/kickstart.emacs
-;; https://github.com/doomemacs/doomemacs
-;; https://github.com/purcell/emacs.d
-;; https://github.com/SystemCrafters/crafted-emacs
-
 ;;; Code:
 
 (use-package use-package
@@ -69,7 +59,7 @@
 				      'default nil
 				      :family font
 				      :height (cond
-					       ((eq system-type 'darwin) 125)
+					       ((eq system-type 'darwin) 120)
 					       ((eq system-type 'windows-nt) 90)
 					       (t 100))))))
   :custom
@@ -77,6 +67,10 @@
   (inhibit-startup-screen t)
   (inhibit-startup-message t)
   (inhibit-default-init t))
+
+(use-package modus-themes
+  :ensure nil
+  :hook (after-init . (lambda () (load-theme 'modus-vivendi t))))
 
 (use-package cus-edit
   :ensure nil
@@ -347,6 +341,12 @@
 (use-package pyvenv
   :hook
   (python-mode . pyvenv-mode))
+
+(use-package lua-mode
+  :config
+  (setq-default lua-indent-level 2)
+  (setq-default lua-indent-nested-block-content-align nil)
+  (setq-default lua-indent-close-paren-align nil))
 
 (use-package csv-mode)
 (use-package yaml-mode)
