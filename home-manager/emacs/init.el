@@ -1,7 +1,5 @@
 ;;; init.el --- -*- lexical-binding: t; coding: utf-8; -*-
-
 ;;; Commentary:
-
 ;;; Code:
 
 ;;; BUILT-IN
@@ -191,6 +189,17 @@
   :hook
   (evil-mode . global-evil-matchit-mode))
 
+(use-package evil-visualstar
+  :hook
+  (evil-mode . global-evil-visualstar-mode))
+
+(use-package evil-snipe
+  :hook
+  (evil-mode . evil-snipe-mode)
+  (evil-mode . evil-snipe-override-mode)
+  :config
+  (setq evil-snipe-scope  'whole-buffer))
+
 (use-package evil-goggles
   :hook
   (evil-mode . evil-goggles-mode)
@@ -200,6 +209,19 @@
   (setq evil-goggles-async-duration 0.900)
   (setq evil-goggles-duration 1.500)
   (evil-goggles-use-diff-faces))
+
+(use-package evil-args
+  :bind
+  (:map evil-inner-text-objects-map
+	("a" . evil-inner-arg))
+  (:map evil-outer-text-objects-map
+	("a" . evil-outer-arg))
+  (:map evil-normal-state-map
+	("H" . evil-backward-arg)
+	("L" . evil-forward-arg))
+  (:map evil-motion-state-map
+	("H" . evil-backward-arg)
+	("L" . evil-forward-arg)))
 
 ;;; UI
 (use-package doom-themes
@@ -330,13 +352,26 @@
           (company-keywords :with company-yasnippet)
           (company-dabbrev :with company-yasnippet))))
 
+(use-package company-box
+  :hook (company-mode . company-box-mode)
+  :init
+  (setq company-box-backends-colors nil)
+  (setq company-box-frame-behavior 'point)
+  (setq company-box-scrollbar 'right)
+  (setq company-box-doc-delay 0.3)
+  (setq company-box-doc-text-scale-level -2))
+
 ;;; SYNTAX CHECKER
 (use-package flycheck
   :bind
   (("M-n" . flycheck-next-error)
    ("M-p" . flycheck-previous-error))
   :hook
-  (prog-mode . global-flycheck-mode))
+  (prog-mode . global-flycheck-mode)
+  :config
+  (setq flycheck-buffer-switch-check-intermediate-buffers t)
+  (setq flycheck-display-errors-delay 0.25)
+  (setq flycheck-idle-change-delay 1.0))
 
 ;;; TOOL
 (use-package exec-path-from-shell
@@ -425,6 +460,14 @@
 
 (use-package magit
   :commands (magit))
+
+(use-package minimap
+  :commands (minimap-mode)
+  :config
+  (setq minimap-window-location 'right)
+  (setq minimap-update-delay 0.2)
+  (setq minimap-width-fraction 0.09)
+  (setq minimap-minimum-width 12))
 
 ;;; LANGUAGE
 (use-package pyvenv
