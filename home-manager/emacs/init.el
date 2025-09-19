@@ -4,6 +4,7 @@
 
 ;;; Code:
 
+;;; BUILT-IN
 (use-package use-package
   :custom
   (use-package-always-ensure t)
@@ -68,10 +69,6 @@
   (inhibit-startup-message t)
   (inhibit-default-init t))
 
-(use-package modus-themes
-  :ensure nil
-  :hook (after-init . (lambda () (load-theme 'modus-vivendi t))))
-
 (use-package cus-edit
   :ensure nil
   :custom
@@ -79,9 +76,9 @@
 
 (use-package which-key
   :ensure nil
-  :defer 10
+  :defer 2
   :config
-  (which-key-mode +1))
+  (which-key-mode))
 
 (use-package autorevert
   :ensure nil
@@ -115,24 +112,12 @@
   (after-init . save-place-mode)
   (prog-mode . electric-pair-mode))
 
-(use-package flymake
-  :ensure nil
-  :hook
-  (prog-mode . flymake-mode)
-  :bind
-  (("M-n" . flymake-goto-next-error)
-   ("M-p" . flymake-goto-prev-error)))
-
 (use-package ibuffer
   :ensure nil
   :bind
   (("C-x C-b" . ibuffer)))
 
-(use-package indent
-  :ensure nil
-  :config
-  (setq tab-always-indent 'complete))
-
+;;; EVIL
 (use-package evil
   :init
   (setq evil-want-keybinding nil)
@@ -147,7 +132,7 @@
   (setq-default evil-escape-delay 0.2))
 
 (use-package evil-collection
-  :defer 5
+  :defer 2
   :config
   (evil-collection-init))
 
@@ -173,6 +158,46 @@
   (setq evil-goggles-duration 1.500)
   (evil-goggles-use-diff-faces))
 
+;;; UI
+(use-package doom-themes
+  :hook
+  (after-init . (lambda () (load-theme 'doom-palenight t))))
+
+(use-package doom-modeline
+  :hook
+  (after-init . doom-modeline-mode)
+  :config
+  (setq doom-modeline-height 25)
+  (setq doom-modeline-bar-width 5)
+  (setq doom-modeline-minor-modes t))
+
+(use-package minions
+  :hook
+  (doom-modeline-mode . minions-mode))
+
+(use-package solaire-mode
+  :hook
+  (doom-modeline-mode . solaire-global-mode))
+
+(use-package hide-mode-line
+  :hook
+  (eshell-mode . hide-mode-line-mode)
+  (eat-mode . hide-mode-line-mode))
+
+(use-package centaur-tabs
+  :bind
+  (:map evil-normal-state-map
+        ("g t" . centaur-tabs-forward)
+        ("g T" . centaur-tabs-backward))
+  :defer 2
+  :config
+  (setq centaur-tabs-style "bar")
+  (setq centaur-tabs-height 25)
+  (setq centaur-tabs-set-icons t)
+  (setq centaur-tabs-icon-type 'nerd-icons)
+  (setq centaur-tabs-set-bar 'left)
+  (centaur-tabs-mode))
+
 (use-package colorful-mode
   :hook
   (prog-mode . colorful-mode))
@@ -185,91 +210,101 @@
   (setq indent-bars-display-on-blank-lines nil)
   (setq indent-bars-prefer-character t))
 
-(use-package vertico
+(use-package rainbow-delimiters
   :hook
-  (after-init . vertico-mode)
-  :bind
-  (:map vertico-map
-	("RET" . vertico-directory-enter)
-	("DEL" . vertico-directory-delete-char))
+  (prog-mode . rainbow-delimiters-mode))
+
+(use-package nerd-icons-ibuffer
+  :hook
+  (ibuffer-mode . nerd-icons-ibuffer-mode))
+
+(use-package nerd-icons-dired
+  :hook
+  (dired-mode . nerd-icons-dired-mode))
+
+(use-package beacon
+  :hook
+  (after-init . beacon-mode))
+
+;;; COMPLETION
+(use-package ivy
+  :hook
+  (after-init . ivy-mode)
   :config
-  (setq vertico-scroll-margin 0)
-  (setq vertico-count 15)
-  (setq vertico-resize t)
-  (setq vertico-cycle t))
+  (setq ivy-use-virutal-buffers t)
+  (setq enable-recursive-minibuffers t)
+  (setq ivy-height 13)
+  (setq ivy-initial-inputs-alist nil)
+  (setq ivy-count-format "[%d/%d] ")
+  (setq ivy-re-builders-alist `((t . ivy--regex-ignore-order))))
 
-(use-package orderless
-  :custom
-  (completion-styles '(orderless basic))
-  (completion-category-defaults nil)
-  (completion-category-overrides '((file (styles partial-completion)))))
-
-(use-package marginalia
+(use-package counsel
   :hook
-  (vertico-mode . marginalia-mode))
+  (ivy-mode . counsel-mode))
 
-(use-package corfu
+(use-package swiper
+  :bind
+  (("C-s" . swiper-isearch)))
+
+(use-package ivy-rich
   :hook
-  (after-init . global-corfu-mode)
-  (global-corfu-mode . corfu-popupinfo-mode)
-  :custom-face
-  (corfu-border ((t (:inherit region :background unspecified))))
+  (ivy-mode . ivy-rich-mode))
+
+(use-package nerd-icons-ivy-rich
+  :hook
+  (ivy-mode . nerd-icons-ivy-rich-mode))
+
+(use-package wgrep
+  :bind
+  (:map grep-mode-map
+	("C-c C-q" . wgrep-change-to-wgrep-mode))
+  :commands
+  (wgrep wgrep-change-to-wgrep-mode)
   :config
-  (setq corfu-auto t)
-  (setq corfu-auto-prefix 1)
-  (setq corfu-preview-current nil)
-  (setq corfu-auto-delay 0.1)
-  (setq corfu-popupinfo-delay '(0.4 . 0.2)))
+  (setq wgrep-auto-save-buffer t))
 
-(use-package corfu-terminal
-  :when (display-graphic-p)
-  :hook (global-corfu-mode . corfu-terminal-mode))
-
-(use-package cape
-  :init
-  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
-  (add-to-list 'completion-at-point-functions #'cape-file)
-  (add-to-list 'completion-at-point-functions #'cape-elisp-block)
-  (add-to-list 'completion-at-point-functions #'cape-keyword)
-  (add-to-list 'completion-at-point-functions #'cape-abbrev))
-
-(use-package yasnippet-capf
-  :after cape
-  :init
-  (add-to-list 'completion-at-point-functions #'yasnippet-capf))
-
-(use-package consult
+(use-package amx
   :hook
-  (completion-list-mode . consult-preview-at-point-mode)
-  :bind
-  (("C-s" . consult-line)
-   ("C-c h". consult-history)
-   ("C-c f". consult-flymake)
-   ("C-c r". consult-ripgrep)
-   ("C-c o". consult-outline)
-   ("C-x b" . consult-buffer)
-   ("C-x 4 b" . consult-buffer-other-window)
-   ("C-x 5 b" . consult-buffer-other-frame)
-   ("C-x r b" . consult-bookmark)
-   ("C-x p b" . consult-project-buffer)))
+  (ivy-mode . amx-mode))
 
-(use-package consult-eglot
-  :after consult)
-
-(use-package consult-todo
-  :after consult
-  :bind
-  (("C-c t" . consult-todo)))
-
-(use-package embark
-  :bind
-  (("C-." . embark-act)
-   ("C-;" . embark-export)
-   ("C-c C-l"  . embark-collect)))
-
-(use-package embark-consult
+(use-package company
   :hook
-  (embark-collect-mode . consult-preview-at-point-mode))
+  (after-init . global-company-mode)
+  :config
+  (setq company-idle-delay 0.1)
+  (setq company-minimum-prefix-length 1)
+  (setq company-tooltip-align-annotations t)
+  (setq company-tooltip-annotation-padding 1)
+  (setq company-tooltip-limit 10)
+  (setq company-tooltip-maximum-width 80)
+  (setq company-tooltip-margin 1)
+  (setq company-format-margin-function 'company-text-icons-margin)
+  (setq company-text-icons-add-background t)
+  (setq company-backends
+        '((company-capf :with company-yasnippet)
+          (company-dabbrev-code :with company-yasnippet)
+          (company-files :with company-yasnippet)
+          (company-keywords :with company-yasnippet)
+          (company-dabbrev :with company-yasnippet))))
+
+;;; SYNTAX CHECKER
+(use-package flycheck
+  :bind
+  (("M-n" . flycheck-next-error)
+   ("M-p" . flycheck-previous-error))
+  :hook
+  (prog-mode . global-flycheck-mode))
+
+;;; TOOL
+(use-package exec-path-from-shell
+  :when (memq window-system '(mac ns x))
+  :defer 5
+  :config
+  (exec-path-from-shell-initialize))
+
+(use-package xclip
+  :hook
+  (after-init . xclip-mode))
 
 (use-package helpful
   :bind
@@ -278,10 +313,6 @@
    ("C-h k" . helpful-key)
    ("C-h x" . helpful-command)
    ("C-h C-d" . helpful-at-point)))
-
-(use-package rainbow-delimiters
-  :hook
-  (prog-mode . rainbow-delimiters-mode))
 
 (use-package diredfl
   :hook
@@ -314,15 +345,6 @@
           ("BUG" error bold)
           ("XXX" font-lock-constant-face bold))))
 
-(use-package wgrep
-  :bind
-  (:map grep-mode-map
-	("C-c C-q" . wgrep-change-to-wgrep-mode))
-  :commands
-  (wgrep wgrep-change-to-wgrep-mode)
-  :config
-  (setq wgrep-auto-save-buffer t))
-
 (use-package diff-hl
   :hook
   (after-init . global-diff-hl-mode)
@@ -343,6 +365,25 @@
   :custom
   (eat-term-name "xterm-256color"))
 
+(use-package quickrun
+  :commands (quickrun)
+  :config
+  (setq quickrun-focus-p nil)
+  (setq quickrun-truncate-lines nil))
+
+(use-package scratch
+  :commands (scratch))
+
+(use-package neotree
+  :bind
+  (("<f1>" . neotree-toggle))
+  :config
+  (setq neo-theme 'nerd-icons))
+
+(use-package magit
+  :commands (magit))
+
+;;; LANGUAGE
 (use-package pyvenv
   :hook
   (python-mode . pyvenv-mode))
@@ -359,6 +400,13 @@
 (use-package toml-mode)
 (use-package markdown-mode)
 (use-package nix-mode)
+
+;;; LSP & DAP
+(use-package lsp-mode
+  :commands (lsp))
+
+(use-package dap-mode
+  :commands (dap-mode))
 
 (provide 'init)
 ;;; init.el ends here
