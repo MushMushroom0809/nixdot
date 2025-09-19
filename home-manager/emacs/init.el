@@ -117,6 +117,49 @@
   :bind
   (("C-x C-b" . ibuffer)))
 
+(use-package treesit
+  :ensure nil
+  :config
+  (setq treesit-language-source-alist
+	'((bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
+	  (c . ("https://github.com/tree-sitter/tree-sitter-c"))
+	  (cmake . ("https://github.com/uyha/tree-sitter-cmake"))
+	  (cpp . ("https://github.com/tree-sitter/tree-sitter-cpp"))
+	  (csharp . ("https://github.com/tree-sitter/tree-sitter-c-sharp.git"))
+	  (css . ("https://github.com/tree-sitter/tree-sitter-css"))
+	  (clojure . ("https://github.com/sogaiu/tree-sitter-clojure"))
+	  (dockerfile . ("https://github.com/camdencheek/tree-sitter-dockerfile"))
+	  (elisp . ("https://github.com/Wilfred/tree-sitter-elisp"))
+	  (elixir "https://github.com/elixir-lang/tree-sitter-elixir" "main" "src" nil nil)
+	  (go . ("https://github.com/tree-sitter/tree-sitter-go"))
+	  (gomod . ("https://github.com/camdencheek/tree-sitter-go-mod.git"))
+	  (haskell "https://github.com/tree-sitter/tree-sitter-haskell" "master" "src" nil nil)
+	  (html . ("https://github.com/tree-sitter/tree-sitter-html"))
+	  (java . ("https://github.com/tree-sitter/tree-sitter-java.git"))
+	  (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript"))
+	  (json . ("https://github.com/tree-sitter/tree-sitter-json"))
+	  (lua . ("https://github.com/Azganoth/tree-sitter-lua"))
+	  (make . ("https://github.com/alemuller/tree-sitter-make"))
+	  (markdown . ("https://github.com/tree-sitter-grammars/tree-sitter-markdown" "split_parser" "tree-sitter-markdown/src"))
+	  (markdown-inline . ("https://github.com/tree-sitter-grammars/tree-sitter-markdown" "split_parser" "tree-sitter-markdown-inline/src"))
+	  (mojo . ("https://github.com/HerringtonDarkholme/tree-sitter-mojo"))
+	  (nix . ("https://github.com/nix-community/nix-ts-mode"))
+	  (ocaml . ("https://github.com/tree-sitter/tree-sitter-ocaml" nil "ocaml/src"))
+	  (org . ("https://github.com/milisims/tree-sitter-org"))
+	  (python . ("https://github.com/tree-sitter/tree-sitter-python"))
+	  (php . ("https://github.com/tree-sitter/tree-sitter-php"))
+	  (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" nil "typescript/src"))
+	  (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" nil "tsx/src"))
+	  (ruby . ("https://github.com/tree-sitter/tree-sitter-ruby"))
+	  (rust . ("https://github.com/tree-sitter/tree-sitter-rust"))
+	  (sql . ("https://github.com/m-novikov/tree-sitter-sql"))
+	  (scala "https://github.com/tree-sitter/tree-sitter-scala" "master" "src" nil nil)
+	  (toml "https://github.com/tree-sitter/tree-sitter-toml" "master" "src" nil nil)
+	  (vue . ("https://github.com/merico-dev/tree-sitter-vue"))
+	  (kotlin . ("https://github.com/fwcd/tree-sitter-kotlin"))
+	  (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
+	  (zig . ("https://github.com/GrayJack/tree-sitter-zig")))))
+
 ;;; EVIL
 (use-package evil
   :init
