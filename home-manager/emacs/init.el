@@ -106,16 +106,7 @@
 (use-package simple
   :ensure nil
   :hook
-  (c-mode . line-number-mode)
-  (c++-mode . line-number-mode)
-  (python-mode . line-number-mode)
-  (json-mode . line-number-mode)
-  (yaml-mode . line-number-mode)
-  (toml-mode . line-number-mode)
-  (nix-mode . line-number-mode)
-  (markdown-mode . line-number-mode)
-  (lua-mode . line-number-mode)
-  (emacs-lisp-mode . line-number-mode)
+  (prog-mode . line-number-mode)
   (prog-mode . column-number-mode))
 
 (use-package loaddefs
@@ -534,6 +525,7 @@
   (setq-default lua-indent-nested-block-content-align nil)
   (setq-default lua-indent-close-paren-align nil))
 
+(use-package ess)
 (use-package csv-mode)
 (use-package yaml-mode)
 (use-package json-mode)
