@@ -106,7 +106,16 @@
 (use-package simple
   :ensure nil
   :hook
-  (prog-mode . line-number-mode)
+  (c-mode . line-number-mode)
+  (c++-mode . line-number-mode)
+  (python-mode . line-number-mode)
+  (json-mode . line-number-mode)
+  (yaml-mode . line-number-mode)
+  (toml-mode . line-number-mode)
+  (nix-mode . line-number-mode)
+  (markdown-mode . line-number-mode)
+  (lua-mode . line-number-mode)
+  (emacs-lisp-mode . line-number-mode)
   (prog-mode . column-number-mode))
 
 (use-package loaddefs
@@ -262,6 +271,7 @@
 (use-package hide-mode-line
   :hook
   (eshell-mode . hide-mode-line-mode)
+  (dired-sidebar-mode . hide-mode-line-mode)
   (eat-mode . hide-mode-line-mode))
 
 (use-package centaur-tabs
@@ -492,11 +502,8 @@
 (use-package scratch
   :commands (scratch))
 
-(use-package neotree
-  :bind
-  (("<f1>" . neotree-toggle))
-  :config
-  (setq neo-theme 'nerd-icons))
+(use-package dired-sidebar
+  :commands (dired-sidebar-toggle-sidebar))
 
 (use-package magit
   :commands (magit))

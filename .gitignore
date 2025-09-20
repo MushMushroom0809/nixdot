@@ -7,6 +7,7 @@ home-manager/emacs/snippets
 home-manager/emacs/transient
 home-manager/emacs/elpa
 home-manager/emacs/eln-cache
+home-manager/emacs/flycheck_init.el
 home-manager/nvim/lazy-lock.json
 home-manager/nvim/lazyvim.json
 home-manager/vim/autoload
