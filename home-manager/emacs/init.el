@@ -371,6 +371,13 @@
   (setq company-box-doc-delay 0.3)
   (setq company-box-doc-text-scale-level -2))
 
+(use-package yasnippet
+  :hook
+  (prog-mode . yas-minor-mode))
+
+(use-package yasnippet-snippets
+  :after yasnippet)
+
 ;;; SYNTAX CHECKER
 (use-package flycheck
   :bind
@@ -406,12 +413,8 @@
   :hook
   (dired-mode . diredfl-mode))
 
-(use-package yasnippet
-  :hook
-  (prog-mode . yas-minor-mode))
-
-(use-package yasnippet-snippets
-  :after yasnippet)
+(use-package vundo
+  :commands (vundo))
 
 (use-package avy
   :bind
