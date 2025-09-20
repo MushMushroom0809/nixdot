@@ -44,6 +44,11 @@
 		  (vertical-scroll-bars)))
   (setq-default display-line-numbers 'relative))
 
+(use-package ns-win
+  :ensure nil
+  :config
+  (setq mac-option-modifier 'meta))
+
 (use-package startup
   :ensure nil
   :hook
@@ -301,6 +306,22 @@
   :hook
   (after-init . beacon-mode))
 
+(use-package auto-highlight-symbol
+  :hook
+  (prog-mode . global-auto-highlight-symbol-mode))
+
+(use-package highlight-numbers
+  :hook
+  (prog-mode . highlight-numbers-mode))
+
+(use-package highlight-defined
+  :hook
+  (emacs-lisp-mode . highlight-defined-mode))
+
+(use-package winum
+  :hook
+  (doom-modeline-mode . winum-mode))
+
 ;;; COMPLETION
 (use-package ivy
   :hook
@@ -451,6 +472,12 @@
   :hook
   (prog-mode . symbol-overlay-mode))
 
+(use-package ace-window
+  :bind
+  ([remap other-window] . ace-window)
+  :config
+  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
+
 (use-package eat
   :commands (eat)
   :custom
@@ -482,6 +509,13 @@
   (setq minimap-width-fraction 0.09)
   (setq minimap-minimum-width 12))
 
+(use-package find-file-in-project
+  :commands (ffip))
+
+(use-package aggressive-indent
+  :hook
+  (prog-mode . aggressive-indent-mode))
+
 ;;; LANGUAGE
 (use-package pyvenv
   :hook
@@ -506,6 +540,11 @@
 
 (use-package dap-mode
   :commands (dap-mode))
+
+;;; FORMATTER
+(use-package apheleia
+  :hook
+  (prog-mode . apheleia-global-mode))
 
 (provide 'init)
 ;;; init.el ends here
