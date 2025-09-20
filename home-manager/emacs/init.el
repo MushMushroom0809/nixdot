@@ -158,7 +158,7 @@
 	  (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
 	  (zig . ("https://github.com/GrayJack/tree-sitter-zig")))))
 
-;;; EVIL
+;;; VIM-LIKE
 (use-package evil
   :init
   (setq evil-want-keybinding nil)
@@ -222,6 +222,16 @@
   (:map evil-motion-state-map
 	("H" . evil-backward-arg)
 	("L" . evil-forward-arg)))
+
+(use-package evil-indent-plus
+  :bind
+  (:map evil-inner-text-objects-map
+	("i" . evil-indent-plus-i-indent)
+	("i" . evil-indent-plus-a-indent)
+	("I" . evil-indent-plus-i-indent-up)
+	("I" . evil-indent-plus-a-indent-up)
+	("J" . evil-indent-plus-i-indent-up-down)
+	("J" . evil-indent-plus-a-indent-up-down)))
 
 ;;; UI
 (use-package doom-themes
