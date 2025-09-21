@@ -44,11 +44,6 @@
 		  (vertical-scroll-bars)))
   (setq-default display-line-numbers 'relative))
 
-(use-package ns-win
-  :ensure nil
-  :config
-  (setq mac-option-modifier 'meta))
-
 (use-package startup
   :ensure nil
   :hook
@@ -168,7 +163,16 @@
   :init
   (setq evil-want-keybinding nil)
   :hook
-  (after-init . evil-mode))
+  (after-init . evil-mode)
+  :config
+  (setq evil-shift-width 2)
+  (evil-ex-define-cmd "wq" '(lambda ()
+			      (interactive)
+			      (save-buffer)
+			      (kill-current-buffer)))
+  (evil-ex-define-cmd "q" '(lambda ()
+			     (interactive)
+			     (kill-current-buffer))))
 
 (use-package evil-escape
   :hook
@@ -523,6 +527,7 @@
   :config
   (setq-default lua-indent-level 2)
   (setq-default lua-indent-nested-block-content-align nil)
+  (setq lua-indent-string-contents t)
   (setq-default lua-indent-close-paren-align nil))
 
 (use-package ess)

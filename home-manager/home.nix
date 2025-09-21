@@ -5,6 +5,10 @@
   ...
 }:
 {
+  imports = [
+    ./emacs
+    ./zsh
+  ];
   home = {
     username = "${username}";
     homeDirectory = if pkgs.stdenv.isDarwin then "/Users/${username}" else "/home/${username}";
@@ -27,9 +31,6 @@
       zsh
     ];
   };
-  imports = [
-    ./emacs
-  ];
   fonts = {
     fontconfig = {
       enable = true;
@@ -38,16 +39,6 @@
   programs = {
     home-manager = {
       enable = true;
-    };
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      shellAliases = {
-        ls = "lsd";
-        ff = "fastfetch";
-        vim = "emacs -nw";
-        tree = "lsd -al --tree";
-      };
     };
   };
 }
