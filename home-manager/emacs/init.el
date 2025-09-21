@@ -217,6 +217,10 @@
   :config
   (setq evil-snipe-scope  'whole-buffer))
 
+(use-package evil-mc
+  :hook
+  (evil-mode . global-evil-mc-mode))
+
 (use-package evil-goggles
   :hook
   (evil-mode . evil-goggles-mode)
@@ -253,7 +257,9 @@
 ;;; UI
 (use-package doom-themes
   :hook
-  (after-init . (lambda () (load-theme 'doom-palenight t))))
+  (after-init . (lambda () (load-theme 'doom-one t)))
+  :config
+  (setq doom-one-brighter-comments t))
 
 (use-package doom-modeline
   :hook
@@ -298,7 +304,7 @@
 (use-package indent-bars
   :hook ((prog-mode yaml-mode) . indent-bars-mode)
   :config
-  (setq indent-bars-color '(highlight :face-bg t :blend 0.425))
+  (setq indent-bars-color '(highlight :face-bg t :blend 0.5))
   (setq indent-bars-no-descend-string t)
   (setq indent-bars-display-on-blank-lines nil)
   (setq indent-bars-prefer-character t))
@@ -317,7 +323,15 @@
 
 (use-package beacon
   :hook
-  (after-init . beacon-mode))
+  (after-init . beacon-mode)
+  :config
+  (setq beacon-size 60)
+  (setq beacon-color 0.25)
+  (setq beacon-blink-duration 0.6)
+  (setq beacon-blink-delay 0.1)
+  (setq beacon-blink-when-window-scrolls t)
+  (setq beacon-blink-when-window-changes t)
+  (setq beacon-blink-when-buffer-changes t))
 
 (use-package auto-highlight-symbol
   :hook
@@ -334,6 +348,18 @@
 (use-package winum
   :hook
   (doom-modeline-mode . winum-mode))
+
+(use-package mode-line-bell
+  :hook
+  (prog-mode . mode-line-bell-mode))
+
+(use-package dimmer
+  :hook
+  (prog-mode . dimmer-mode)
+  :config
+  (setq dimmer-fraction 0.15)
+  (dimmer-configure-company-box)
+  (dimmer-configure-which-key))
 
 ;;; COMPLETION
 (use-package ivy
@@ -525,6 +551,10 @@
 (use-package aggressive-indent
   :hook
   (prog-mode . aggressive-indent-mode))
+
+(use-package expand-region
+  :bind
+  (("C-=" . er/expand-region)))
 
 ;;; LANGUAGE
 (use-package pyvenv
