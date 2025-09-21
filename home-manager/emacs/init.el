@@ -115,6 +115,14 @@
   :bind
   (("C-x C-b" . ibuffer)))
 
+(use-package dired
+  :ensure nil
+  :config
+  (setq dired-dwim-target t)
+  (setq dired-recursive-deletes 'always)
+  (setq dired-recursive-copies 'always)
+  (setq dired-listing-switches "-alh --group-directories-first"))
+
 (use-package treesit
   :ensure nil
   :config
@@ -523,6 +531,10 @@
   :hook
   (python-mode . pyvenv-mode))
 
+(use-package uv-mode
+  :hook
+  (python-mode . uv-mode-auto-activate-hook))
+
 (use-package lua-mode
   :config
   (setq-default lua-indent-level 2)
@@ -532,6 +544,7 @@
 
 (use-package ess)
 (use-package csv-mode)
+(use-package typescript-mode)
 (use-package yaml-mode)
 (use-package json-mode)
 (use-package toml-mode)
@@ -541,6 +554,13 @@
 ;;; LSP & DAP
 (use-package lsp-mode
   :commands (lsp))
+
+(use-package lsp-pyright
+  :config
+  (setq lsp-pyright-langserver-command "basedpyright"))
+
+(use-package lsp-ivy
+  :commands (lsp-ivy-workspace-symbol lsp-ivy-global-workspace-symbol))
 
 (use-package dap-mode
   :commands (dap-mode))
