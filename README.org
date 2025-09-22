@@ -13,7 +13,7 @@ sudo darwin-rebuild --flake ~/nixdot#m4pro switch
 #+begin_src sh
 sudo nix run nix-darwin --extra-experimental-features "nix-command flakes"  -- switch --flake ~/nixdot#m4pro
 sudo darwin-rebuild --flake ~/nixdot#m4pro switch
-#+end
+#+end_src
 
 ** NixOS
 
