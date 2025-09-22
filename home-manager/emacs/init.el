@@ -100,8 +100,7 @@
   :ensure nil
   :hook
   (after-init . save-place-mode)
-  (prog-mode . electric-pair-mode)
-  (prog-mode . global-whitespace-mode))
+  (prog-mode . electric-pair-mode))
 
 (use-package ibuffer
   :ensure nil
@@ -227,14 +226,6 @@
   :hook
   (prog-mode . rainbow-delimiters-mode))
 
-(use-package nerd-icons-ibuffer
-  :hook
-  (ibuffer-mode . nerd-icons-ibuffer-mode))
-
-(use-package nerd-icons-dired
-  :hook
-  (dired-mode . nerd-icons-dired-mode))
-
 ;;; COMPLETION
 (use-package ivy
   :hook
@@ -258,10 +249,6 @@
 (use-package ivy-rich
   :hook
   (ivy-mode . ivy-rich-mode))
-
-(use-package nerd-icons-ivy-rich
-  :hook
-  (ivy-mode . nerd-icons-ivy-rich-mode))
 
 (use-package wgrep
   :bind
