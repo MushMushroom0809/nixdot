@@ -27,15 +27,18 @@ nix-channel --add https://github.com/nix-community/home-manager/archive/master.t
 nix-channel --update
 #+end_src
 
+
 2. Edit =~/.config/nix/nix.conf=
 #+begin_src sh
 nix ...
 #+end_src
 
+
 3. Install =home-manager=
 #+begin_src sh
 nix-shell '<home-manager>' -A install
 #+end_src
+
 
 4. Build
 #+begin_src sh
