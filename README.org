@@ -21,9 +21,23 @@ sudo nixos-rebuild switch --flake ~/nixdot#nixos-vm
 
 Use standalone way to manage home-manager.
 
+1. Update nix channel.
 #+begin_src sh
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
+#+end_src
+
+2. Edit =~/.config/nix/nix.conf=
+#+begin_src sh
+nix ...
+#+end_src
+
+3. Install =home-manager=
+#+begin_src sh
 nix-shell '<home-manager>' -A install
+#+end_src
+
+4. Build
+#+begin_src sh
 home-manager switch --flake ~/nixdot#cya@m4pro
 #+end_src
