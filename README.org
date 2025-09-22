@@ -5,8 +5,6 @@
 *** Install Nix package manager on macOS.
 #+begin_src sh
 sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
-sudo nix run nix-darwin --extra-experimental-features "nix-command flakes"  -- switch --flake ~/nixdot#m4pro
-sudo darwin-rebuild --flake ~/nixdot#m4pro switch
 #+end_src
 
 *** Install =nix-darwin= and =darwin-rebuild= command on macOS.
