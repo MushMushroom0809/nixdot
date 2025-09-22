@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; BUILT-IN
+;;; BUILTIN
 (use-package use-package
   :custom
   (use-package-always-ensure t)
@@ -100,7 +100,8 @@
   :ensure nil
   :hook
   (after-init . save-place-mode)
-  (prog-mode . electric-pair-mode))
+  (prog-mode . electric-pair-mode)
+  (prog-mode . global-whitespace-mode))
 
 (use-package ibuffer
   :ensure nil
