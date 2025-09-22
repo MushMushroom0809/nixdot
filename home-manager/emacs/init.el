@@ -50,9 +50,9 @@
 				      'default nil
 				      :family font
 				      :height (cond
-				 ((eq system-type 'darwin) 130)
-				 ((eq system-type 'windows-nt) 100)
-				 (t 100))))))
+					       ((eq system-type 'darwin) 130)
+					       ((eq system-type 'windows-nt) 100)
+					       (t 100))))))
   :custom
   (initial-major-mode 'fundamental-mode)
   (inhibit-startup-screen t)
