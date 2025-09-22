@@ -355,25 +355,10 @@
   :config
   (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
-(use-package quickrun
-  :commands (quickrun)
-  :config
-  (setq quickrun-focus-p nil)
-  (setq quickrun-truncate-lines nil))
-
-(use-package magit
-  :commands (magit))
-
-(use-package find-file-in-project
-  :commands (ffip))
 ;;; LANGUAGE
 (use-package pyvenv
   :hook
   (python-mode . pyvenv-mode))
-
-(use-package uv-mode
-  :hook
-  (python-mode . uv-mode-auto-activate-hook))
 
 (use-package lua-mode
   :config
