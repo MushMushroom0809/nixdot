@@ -32,7 +32,7 @@ nix-channel --update
 
 *** Edit =~/.config/nix/nix.conf=
 #+begin_src sh
-nix ...
+extra-experimental-features = nix-command flakes
 #+end_src
 
 
