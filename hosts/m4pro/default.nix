@@ -103,16 +103,9 @@
     taps = [ ];
     brews = [ "mas" ];
     casks = [
-      "firefox"
       "google-chrome"
       "keka"
-      "microsoft-edge"
-      "microsoft-word"
-      "microsoft-excel"
-      "microsoft-powerpoint"
       "raycast"
-      "stats"
-      "visual-studio-code"
     ];
     masApps = {
       "LINE" = 539883307;
