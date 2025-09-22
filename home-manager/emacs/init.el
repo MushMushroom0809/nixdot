@@ -166,13 +166,8 @@
   (after-init . evil-mode)
   :config
   (setq evil-shift-width 2)
-  (evil-ex-define-cmd "wq" '(lambda ()
-			      (interactive)
-			      (save-buffer)
-			      (kill-current-buffer)))
-  (evil-ex-define-cmd "q" '(lambda ()
-			     (interactive)
-			     (kill-current-buffer))))
+  (evil-ex-define-cmd "wq" '(lambda () (interactive) (save-buffer) (kill-current-buffer)))
+  (evil-ex-define-cmd "q" '(lambda () (interactive) (kill-current-buffer))))
 
 (use-package evil-escape
   :hook
