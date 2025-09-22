@@ -24,7 +24,7 @@ sudo nixos-rebuild switch --flake ~/nixdot#nixos-vm
 
 ** home-manager
 
-Use standalone way to manage home-manager.
+*** Use standalone way to manage home-manager.
 
 *** Update nix channel.
 #+begin_src sh
