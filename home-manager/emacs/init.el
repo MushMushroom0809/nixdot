@@ -19,15 +19,14 @@
     (package-initialize))
   (setq package-check-signature nil)
   (setq package-quickstart t)
-  (setq package-archives
-	'(("melpa" . "https://melpa.org/packages/")
-	  ;; ("elpa-devel" . "https://elpa.gnu.org/devel/")
-	  ;; ("org" . "https://orgmode.org/elpa/")
-	  ;; ("marmalade" . "http://marmalade-repo.jrg/packages/")
-	  ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
-	  ;; ("jcs-elpa" . "https://jcs-emacs.github.io/jcs-elpa/packages/")
-	  ("gnu" . "https://elpa.gnu.org/packages/")
-	  ("nongnu" . "https://elpa.nongnu.org/nongnu/"))))
+  (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			   ;; ("elpa-devel" . "https://elpa.gnu.org/devel/")
+			   ;; ("org" . "https://orgmode.org/elpa/")
+			   ;; ("marmalade" . "http://marmalade-repo.jrg/packages/")
+			   ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+			   ;; ("jcs-elpa" . "https://jcs-emacs.github.io/jcs-elpa/packages/")
+			   ("gnu" . "https://elpa.gnu.org/packages/")
+			   ("nongnu" . "https://elpa.nongnu.org/nongnu/"))))
 
 (use-package emacs
   :ensure nil
@@ -40,19 +39,12 @@
 (use-package startup
   :ensure nil
   :hook (emacs-startup . (lambda ()
-			   (cl-loop for font in '("JetbrainsMono Nerd Font"
-						  "Menlo"
-						  "Hack"
-						  "Monaco"
-						  "Consolas")
+			   (cl-loop for font in '("JetbrainsMono Nerd Font" "Menlo" "Hack" "Monaco" "Consolas")
 				    when (find-font (font-spec :name font))
-				    return (set-face-attribute
-					    'default nil
-					    :family font
-					    :height (cond
-						     ((eq system-type 'darwin) 130)
-						     ((eq system-type 'windows-nt) 100)
-						     (t 100))))))
+				    return (set-face-attribute 'default nil :family font :height (cond
+												  ((eq system-type 'darwin) 130)
+												  ((eq system-type 'windows-nt) 100)
+												  (t 100))))))
   :custom
   (initial-major-mode 'fundamental-mode)
   (inhibit-startup-screen t)
@@ -255,15 +247,14 @@
   :hook ((prog-mode yaml-mode) . hl-todo-mode)
   :config
   (setq hl-todo-highlight-punctuation ":")
-  (setq hl-todo-keyword-faces
-	'(("TODO" warning bold)
-	  ("FIXME" error bold)
-	  ("REVIEW" font-lock-keyword-face bold)
-	  ("HACK" font-lock-constant-face bold)
-	  ("DEPRECATED" font-lock-doc-face bold)
-	  ("NOTE" success bold)
-	  ("BUG" error bold)
-	  ("XXX" font-lock-constant-face bold))))
+  (setq hl-todo-keyword-faces '(("TODO" warning bold)
+				("FIXME" error bold)
+				("REVIEW" font-lock-keyword-face bold)
+				("HACK" font-lock-constant-face bold)
+				("DEPRECATED" font-lock-doc-face bold)
+				("NOTE" success bold)
+				("BUG" error bold)
+				("XXX" font-lock-constant-face bold))))
 
 (use-package diff-hl
   :hook
