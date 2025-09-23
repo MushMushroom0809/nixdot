@@ -20,13 +20,13 @@
   (setq package-check-signature nil)
   (setq package-quickstart t)
   (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			                     ;; ("elpa-devel" . "https://elpa.gnu.org/devel/")
-			                     ;; ("org" . "https://orgmode.org/elpa/")
-			                     ;; ("marmalade" . "http://marmalade-repo.jrg/packages/")
-			                     ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
-			                     ;; ("jcs-elpa" . "https://jcs-emacs.github.io/jcs-elpa/packages/")
-			                     ("gnu" . "https://elpa.gnu.org/packages/")
-			                     ("nongnu" . "https://elpa.nongnu.org/nongnu/"))))
+                           ;; ("elpa-devel" . "https://elpa.gnu.org/devel/")
+                           ;; ("org" . "https://orgmode.org/elpa/")
+                           ;; ("marmalade" . "http://marmalade-repo.jrg/packages/")
+                           ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+                           ;; ("jcs-elpa" . "https://jcs-emacs.github.io/jcs-elpa/packages/")
+                           ("gnu" . "https://elpa.gnu.org/packages/")
+                           ("nongnu" . "https://elpa.nongnu.org/nongnu/"))))
 
 (use-package emacs
   :ensure nil
