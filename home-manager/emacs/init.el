@@ -34,6 +34,7 @@
   :config
   (setq-default outline-margin-width 1)
   (setq-default use-short-answers t)
+  (setq-default show-trailing-whitespace t)
   (setq-default display-line-numbers 'relative))
 
 (use-package startup
