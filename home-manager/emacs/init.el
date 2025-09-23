@@ -83,7 +83,7 @@
 (use-package display-fill-column-indicator
   :ensure nil
   :hook
-  (prog-mode . global-display-fill-column-indicator-mode))
+  (prog-mode . display-fill-column-indicator-mode))
 
 (use-package paren
   :ensure nil
@@ -95,6 +95,11 @@
   :hook
   (prog-mode . line-number-mode)
   (prog-mode . column-number-mode))
+
+(use-package hl-line
+  :ensure nil
+  :hook
+  (prog-mode . hl-line-mode))
 
 (use-package loaddefs
   :ensure nil
