@@ -20,13 +20,13 @@
   (setq package-check-signature nil)
   (setq package-quickstart t)
   (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			   ;; ("elpa-devel" . "https://elpa.gnu.org/devel/")
-			   ;; ("org" . "https://orgmode.org/elpa/")
-			   ;; ("marmalade" . "http://marmalade-repo.jrg/packages/")
-			   ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
-			   ;; ("jcs-elpa" . "https://jcs-emacs.github.io/jcs-elpa/packages/")
-			   ("gnu" . "https://elpa.gnu.org/packages/")
-			   ("nongnu" . "https://elpa.nongnu.org/nongnu/"))))
+			                     ;; ("elpa-devel" . "https://elpa.gnu.org/devel/")
+			                     ;; ("org" . "https://orgmode.org/elpa/")
+			                     ;; ("marmalade" . "http://marmalade-repo.jrg/packages/")
+			                     ;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+			                     ;; ("jcs-elpa" . "https://jcs-emacs.github.io/jcs-elpa/packages/")
+			                     ("gnu" . "https://elpa.gnu.org/packages/")
+			                     ("nongnu" . "https://elpa.nongnu.org/nongnu/"))))
 
 (use-package emacs
   :ensure nil
@@ -34,17 +34,18 @@
   (setq-default outline-margin-width 1)
   (setq-default use-short-answers t)
   (setq-default show-trailing-whitespace t)
-  (setq-default display-line-numbers 'relative))
+  (setq-default display-line-numbers 'relative)
+  (setq-default tab-width 2))
 
 (use-package startup
   :ensure nil
   :hook (emacs-startup . (lambda ()
-			   (cl-loop for font in '("JetbrainsMono Nerd Font" "Menlo" "Hack" "Monaco" "Consolas")
-				    when (find-font (font-spec :name font))
-				    return (set-face-attribute 'default nil :family font :height (cond
-												  ((eq system-type 'darwin) 130)
-												  ((eq system-type 'windows-nt) 100)
-												  (t 100))))))
+			                     (cl-loop for font in '("JetbrainsMono Nerd Font" "Menlo" "Hack" "Monaco" "Consolas")
+				                            when (find-font (font-spec :name font))
+				                            return (set-face-attribute 'default nil :family font :height (cond
+												                                                                          ((eq system-type 'darwin) 130)
+												                                                                          ((eq system-type 'windows-nt) 100)
+												                                                                          (t 100))))))
   :custom
   (initial-major-mode 'fundamental-mode)
   (inhibit-startup-screen t)
@@ -84,7 +85,9 @@
   :ensure nil
   :hook
   (prog-mode . line-number-mode)
-  (prog-mode . column-number-mode))
+  (prog-mode . column-number-mode)
+  :config
+  (setq-default indent-tabs-mode nil))
 
 (use-package hl-line
   :ensure nil
@@ -134,9 +137,9 @@
   :after evil
   :bind
   (:map evil-normal-state-map
-	("gcc" . evilnc-comment-or-uncomment-lines))
+	      ("gcc" . evilnc-comment-or-uncomment-lines))
   (:map evil-visual-state-map
-	("gc" . evilnc-comment-or-uncomment-lines)))
+	      ("gc" . evilnc-comment-or-uncomment-lines)))
 
 (use-package evil-matchit
   :hook (evil-mode . global-evil-matchit-mode))
@@ -172,7 +175,7 @@
 (use-package wgrep
   :bind
   (:map grep-mode-map
-	("C-c C-q" . wgrep-change-to-wgrep-mode))
+	      ("C-c C-q" . wgrep-change-to-wgrep-mode))
   :config
   (setq wgrep-auto-save-buffer t))
 
@@ -192,10 +195,10 @@
   (setq company-format-margin-function 'company-text-icons-margin)
   (setq company-text-icons-add-background t)
   (setq company-backends '((company-capf :with company-yasnippet)
-			   (company-dabbrev-code :with company-yasnippet)
-			   (company-files :with company-yasnippet)
-			   (company-keywords :with company-yasnippet)
-			   (company-dabbrev :with company-yasnippet))))
+			                     (company-dabbrev-code :with company-yasnippet)
+			                     (company-files :with company-yasnippet)
+			                     (company-keywords :with company-yasnippet)
+			                     (company-dabbrev :with company-yasnippet))))
 
 (use-package company-box
   :hook (company-mode . company-box-mode)
@@ -248,13 +251,13 @@
   :config
   (setq hl-todo-highlight-punctuation ":")
   (setq hl-todo-keyword-faces '(("TODO" warning bold)
-				("FIXME" error bold)
-				("REVIEW" font-lock-keyword-face bold)
-				("HACK" font-lock-constant-face bold)
-				("DEPRECATED" font-lock-doc-face bold)
-				("NOTE" success bold)
-				("BUG" error bold)
-				("XXX" font-lock-constant-face bold))))
+				                        ("FIXME" error bold)
+				                        ("REVIEW" font-lock-keyword-face bold)
+				                        ("HACK" font-lock-constant-face bold)
+				                        ("DEPRECATED" font-lock-doc-face bold)
+				                        ("NOTE" success bold)
+				                        ("BUG" error bold)
+				                        ("XXX" font-lock-constant-face bold))))
 
 (use-package diff-hl
   :hook
