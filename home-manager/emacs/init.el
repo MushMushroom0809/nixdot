@@ -211,8 +211,7 @@
   (setq company-box-backends-colors nil)
   (setq company-box-frame-behavior 'point)
   (setq company-box-scrollbar 'right)
-  (setq company-box-doc-delay 0.3)
-  (setq company-box-doc-text-scale-level -2))
+  (setq company-box-doc-delay 0.3))
 
 (use-package yasnippet
   :hook (prog-mode . yas-minor-mode))
