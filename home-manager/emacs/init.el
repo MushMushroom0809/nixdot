@@ -181,7 +181,6 @@
   :bind
   (:map grep-mode-map
 	("C-c C-q" . wgrep-change-to-wgrep-mode))
-  :commands (wgrep wgrep-change-to-wgrep-mode)
   :config
   (setq wgrep-auto-save-buffer t))
 
