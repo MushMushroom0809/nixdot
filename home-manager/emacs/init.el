@@ -149,16 +149,6 @@
 (use-package evil-matchit
   :hook (evil-mode . global-evil-matchit-mode))
 
-(use-package evil-visualstar
-  :hook (evil-mode . global-evil-visualstar-mode))
-
-(use-package evil-snipe
-  :hook
-  (evil-mode . evil-snipe-mode)
-  (evil-mode . evil-snipe-override-mode)
-  :config
-  (setq evil-snipe-scope  'whole-buffer))
-
 ;;; UI
 (use-package colorful-mode
   :hook (prog-mode . colorful-mode))
