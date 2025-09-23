@@ -3,10 +3,10 @@
 ;;; Code:
 
 (when (or (featurep 'esup-child)
-	  (fboundp 'profile-dotemacs)
-	  (daemonp)
-	  (boundp 'startup-now)
-	  noninteractive)
+          (fboundp 'profile-dotemacs)
+          (daemonp)
+          (boundp 'startup-now)
+          noninteractive)
   (setq package-enable-at-startup nil))
 (set-language-environment "UTF-8")
 (set-terminal-coding-system 'utf-8)
@@ -20,9 +20,9 @@
 (setq inhibit-startup-message t)
 (setq inhibit-default-init t)
 (setq default-frame-alist '((menu-bar-lines . 0)
-			    (tool-bar-lines . 0)
-			    (horizontal-scroll-bars)
-			    (vertical-scroll-bars)))
+                            (tool-bar-lines . 0)
+                            (horizontal-scroll-bars)
+                            (vertical-scroll-bars)))
 
 (provide 'early-init)
 ;;; early-init.el ends here
