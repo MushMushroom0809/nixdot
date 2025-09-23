@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+(setenv "http_proxy" "http://proxy-n1.taipower.com.tw:3128")
+(setenv "https_proxy" "https://proxy-n1.taipower.com.tw:3128")
+
 ;;; BUILTIN
 (use-package use-package
   :custom
@@ -39,26 +42,26 @@
 
 (use-package startup
   :ensure nil
-  :hook
-  (emacs-startup . (lambda ()
-		     (cl-loop for font in '("JetbrainsMono Nerd Font"
-					    "Menlo"
-					    "Hack"
-					    "Monaco"
-					    "Consolas")
-			      when (find-font (font-spec :name font))
-			      return (set-face-attribute
-				      'default nil
-				      :family font
-				      :height (cond
-					       ((eq system-type 'darwin) 130)
-					       ((eq system-type 'windows-nt) 100)
-					       (t 100))))))
+  :hook (emacs-startup . (lambda ()
+			   (cl-loop for font in '("JetbrainsMono Nerd Font"
+						  "Menlo"
+						  "Hack"
+						  "Monaco"
+						  "Consolas")
+				    when (find-font (font-spec :name font))
+				    return (set-face-attribute
+					    'default nil
+					    :family font
+					    :height (cond
+						     ((eq system-type 'darwin) 130)
+						     ((eq system-type 'windows-nt) 100)
+						     (t 100))))))
   :custom
   (initial-major-mode 'fundamental-mode)
   (inhibit-startup-screen t)
   (inhibit-startup-message t)
-  (inhibit-default-init t))
+  (inhibit-default-init t)
+  (auto-save-list-file-prefix nil))
 
 (use-package cus-edit
   :ensure nil
@@ -67,29 +70,26 @@
 
 (use-package which-key
   :ensure nil
-  :defer 2
-  :config
-  (which-key-mode))
+  :hook (after-init . which-key-mode))
 
 (use-package autorevert
   :ensure nil
-  :hook
-  (after-init . global-auto-revert-mode))
-
-(use-package repeat
-  :ensure nil
-  :hook
-  (after-init . repeat-mode))
+  :hook (after-init . global-auto-revert-mode))
 
 (use-package display-fill-column-indicator
   :ensure nil
-  :hook
-  (prog-mode . display-fill-column-indicator-mode))
+  :hook (prog-mode . display-fill-column-indicator-mode))
+
+(use-package files
+  :ensure nil
+  :custom
+  (setq auto-save-default nil)
+  (setq make-backup-files nil)
+  (setq backup-inhibited t))
 
 (use-package paren
   :ensure nil
-  :hook
-  (prog-mode . show-paren-mode))
+  :hook (prog-mode . show-paren-mode))
 
 (use-package simple
   :ensure nil
@@ -99,8 +99,7 @@
 
 (use-package hl-line
   :ensure nil
-  :hook
-  (prog-mode . hl-line-mode))
+  :hook (prog-mode . hl-line-mode))
 
 (use-package loaddefs
   :ensure nil
@@ -125,16 +124,14 @@
 (use-package evil
   :init
   (setq evil-want-keybinding nil)
-  :hook
-  (after-init . evil-mode)
+  :hook (after-init . evil-mode)
   :config
   (setq evil-shift-width 2)
   (evil-ex-define-cmd "wq" '(lambda () (interactive) (save-buffer) (kill-current-buffer)))
   (evil-ex-define-cmd "q" '(lambda () (interactive) (kill-current-buffer))))
 
 (use-package evil-escape
-  :hook
-  (evil-mode . evil-escape-mode)
+  :hook (evil-mode . evil-escape-mode)
   :config
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.2))
@@ -153,12 +150,10 @@
 	("gc" . evilnc-comment-or-uncomment-lines)))
 
 (use-package evil-matchit
-  :hook
-  (evil-mode . global-evil-matchit-mode))
+  :hook (evil-mode . global-evil-matchit-mode))
 
 (use-package evil-visualstar
-  :hook
-  (evil-mode . global-evil-visualstar-mode))
+  :hook (evil-mode . global-evil-visualstar-mode))
 
 (use-package evil-snipe
   :hook
@@ -169,8 +164,7 @@
 
 ;;; UI
 (use-package colorful-mode
-  :hook
-  (prog-mode . colorful-mode))
+  :hook (prog-mode . colorful-mode))
 
 (use-package indent-bars
   :hook ((prog-mode yaml-mode) . indent-bars-mode)
@@ -181,13 +175,11 @@
   (setq indent-bars-prefer-character t))
 
 (use-package rainbow-delimiters
-  :hook
-  (prog-mode . rainbow-delimiters-mode))
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 ;;; COMPLETION
 (use-package ivy
-  :hook
-  (after-init . ivy-mode)
+  :hook (after-init . ivy-mode)
   :config
   (setq ivy-use-virutal-buffers t)
   (setq enable-recursive-minibuffers t)
@@ -197,33 +189,28 @@
   (setq ivy-re-builders-alist `((t . ivy--regex-ignore-order))))
 
 (use-package counsel
-  :hook
-  (ivy-mode . counsel-mode))
+  :hook (ivy-mode . counsel-mode))
 
 (use-package swiper
   :bind
   (("C-s" . swiper-isearch)))
 
 (use-package ivy-rich
-  :hook
-  (ivy-mode . ivy-rich-mode))
+  :hook (ivy-mode . ivy-rich-mode))
 
 (use-package wgrep
   :bind
   (:map grep-mode-map
 	("C-c C-q" . wgrep-change-to-wgrep-mode))
-  :commands
-  (wgrep wgrep-change-to-wgrep-mode)
+  :commands (wgrep wgrep-change-to-wgrep-mode)
   :config
   (setq wgrep-auto-save-buffer t))
 
 (use-package amx
-  :hook
-  (ivy-mode . amx-mode))
+  :hook (ivy-mode . amx-mode))
 
 (use-package company
-  :hook
-  (after-init . global-company-mode)
+  :hook (after-init . global-company-mode)
   :config
   (setq company-idle-delay 0.1)
   (setq company-minimum-prefix-length 1)
@@ -234,12 +221,11 @@
   (setq company-tooltip-margin 1)
   (setq company-format-margin-function 'company-text-icons-margin)
   (setq company-text-icons-add-background t)
-  (setq company-backends
-	'((company-capf :with company-yasnippet)
-	  (company-dabbrev-code :with company-yasnippet)
-	  (company-files :with company-yasnippet)
-	  (company-keywords :with company-yasnippet)
-	  (company-dabbrev :with company-yasnippet))))
+  (setq company-backends '((company-capf :with company-yasnippet)
+			   (company-dabbrev-code :with company-yasnippet)
+			   (company-files :with company-yasnippet)
+			   (company-keywords :with company-yasnippet)
+			   (company-dabbrev :with company-yasnippet))))
 
 (use-package company-box
   :hook (company-mode . company-box-mode)
@@ -251,19 +237,17 @@
   (setq company-box-doc-text-scale-level -2))
 
 (use-package yasnippet
-  :hook
-  (prog-mode . yas-minor-mode))
+  :hook (prog-mode . yas-minor-mode))
 
 (use-package yasnippet-snippets
   :after yasnippet)
 
-;;; SYNTAX CHECKER
+;;; SYNTAX CHECKING
 (use-package flycheck
   :bind
   (("M-n" . flycheck-next-error)
    ("M-p" . flycheck-previous-error))
-  :hook
-  (prog-mode . global-flycheck-mode)
+  :hook (prog-mode . global-flycheck-mode)
   :config
   (setq flycheck-buffer-switch-check-intermediate-buffers t)
   (setq flycheck-display-errors-delay 0.25)
@@ -277,8 +261,7 @@
   (exec-path-from-shell-initialize))
 
 (use-package xclip
-  :hook
-  (after-init . xclip-mode))
+  :hook (after-init . xclip-mode))
 
 (use-package helpful
   :bind
@@ -289,8 +272,7 @@
    ("C-h C-d" . helpful-at-point)))
 
 (use-package diredfl
-  :hook
-  (dired-mode . diredfl-mode))
+  :hook (dired-mode . diredfl-mode))
 
 (use-package hl-todo
   :hook ((prog-mode yaml-mode) . hl-todo-mode)
@@ -319,17 +301,6 @@
   (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
 ;;; LANGUAGE
-(use-package pyvenv
-  :hook
-  (python-mode . pyvenv-mode))
-
-(use-package lua-mode
-  :config
-  (setq-default lua-indent-level 2)
-  (setq-default lua-indent-nested-block-content-align nil)
-  (setq lua-indent-string-contents t)
-  (setq-default lua-indent-close-paren-align nil))
-
 (use-package csv-mode)
 (use-package yaml-mode)
 (use-package json-mode)
