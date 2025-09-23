@@ -2,9 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(setenv "http_proxy" "http://proxy-n1.taipower.com.tw:3128")
-(setenv "https_proxy" "https://proxy-n1.taipower.com.tw:3128")
-
 ;;; BUILTIN
 (use-package use-package
   :custom
