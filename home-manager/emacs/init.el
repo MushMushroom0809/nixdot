@@ -30,22 +30,23 @@
 
 (use-package emacs
   :ensure nil
-  :config
-  (setq-default outline-margin-width 1)
-  (setq-default use-short-answers t)
-  (setq-default show-trailing-whitespace t)
-  (setq-default display-line-numbers 'relative)
-  (setq-default tab-width 2))
+  :custom
+  (use-short-answers t)
+  (show-trailing-whitespace t)
+  (display-line-numbers 'relative)
+  (tab-width 2))
 
 (use-package startup
   :ensure nil
   :hook (emacs-startup . (lambda ()
-			                     (cl-loop for font in '("JetbrainsMono Nerd Font" "Menlo" "Hack" "Monaco" "Consolas")
-				                            when (find-font (font-spec :name font))
-				                            return (set-face-attribute 'default nil :family font :height (cond
-												                                                                          ((eq system-type 'darwin) 130)
-												                                                                          ((eq system-type 'windows-nt) 100)
-												                                                                          (t 100))))))
+                           (cl-loop for font in '("JetbrainsMono Nerd Font" "Monaco" "Consolas")
+                                    when (find-font (font-spec :name font))
+                                    return (set-face-attribute 'default nil
+                                                               :family font
+                                                               :height (cond
+                                                                        ((eq system-type 'darwin) 130)
+                                                                        ((eq system-type 'windows-nt) 100)
+                                                                        (t 100))))))
   :custom
   (initial-major-mode 'fundamental-mode)
   (inhibit-startup-screen t)
@@ -86,8 +87,8 @@
   :hook
   (prog-mode . line-number-mode)
   (prog-mode . column-number-mode)
-  :config
-  (setq-default indent-tabs-mode nil))
+  :custom
+  (indent-tabs-mode nil))
 
 (use-package hl-line
   :ensure nil
