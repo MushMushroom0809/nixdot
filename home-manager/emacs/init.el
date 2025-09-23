@@ -80,9 +80,9 @@
 (use-package files
   :ensure nil
   :custom
-  (setq auto-save-default nil)
-  (setq make-backup-files nil)
-  (setq backup-inhibited t))
+  (auto-save-default nil)
+  (make-backup-files nil)
+  (backup-inhibited t))
 
 (use-package paren
   :ensure nil
