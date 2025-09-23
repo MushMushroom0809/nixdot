@@ -196,10 +196,10 @@
   (setq company-format-margin-function 'company-text-icons-margin)
   (setq company-text-icons-add-background t)
   (setq company-backends '((company-capf :with company-yasnippet)
-			                     (company-dabbrev-code :with company-yasnippet)
-			                     (company-files :with company-yasnippet)
-			                     (company-keywords :with company-yasnippet)
-			                     (company-dabbrev :with company-yasnippet))))
+                           (company-dabbrev-code :with company-yasnippet)
+                           (company-files :with company-yasnippet)
+                           (company-keywords :with company-yasnippet)
+                           (company-dabbrev :with company-yasnippet))))
 
 (use-package company-box
   :hook (company-mode . company-box-mode)
@@ -252,13 +252,13 @@
   :config
   (setq hl-todo-highlight-punctuation ":")
   (setq hl-todo-keyword-faces '(("TODO" warning bold)
-				                        ("FIXME" error bold)
-				                        ("REVIEW" font-lock-keyword-face bold)
-				                        ("HACK" font-lock-constant-face bold)
-				                        ("DEPRECATED" font-lock-doc-face bold)
-				                        ("NOTE" success bold)
-				                        ("BUG" error bold)
-				                        ("XXX" font-lock-constant-face bold))))
+                                ("FIXME" error bold)
+                                ("REVIEW" font-lock-keyword-face bold)
+                                ("HACK" font-lock-constant-face bold)
+                                ("DEPRECATED" font-lock-doc-face bold)
+                                ("NOTE" success bold)
+                                ("BUG" error bold)
+                                ("XXX" font-lock-constant-face bold))))
 
 (use-package diff-hl
   :hook
