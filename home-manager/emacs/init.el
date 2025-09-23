@@ -153,14 +153,6 @@
 (use-package colorful-mode
   :hook (prog-mode . colorful-mode))
 
-(use-package indent-bars
-  :hook ((prog-mode yaml-mode) . indent-bars-mode)
-  :config
-  (setq indent-bars-color '(highlight :face-bg t :blend 0.5))
-  (setq indent-bars-no-descend-string t)
-  (setq indent-bars-display-on-blank-lines nil)
-  (setq indent-bars-prefer-character t))
-
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
