@@ -6,6 +6,7 @@
 }:
 {
   imports = [
+    ./fonts
     ./emacs
     ./zsh
   ];
@@ -22,7 +23,6 @@
       go
       git
       lsd
-      nerd-fonts.jetbrains-mono
       neofetch
       nixfmt-rfc-style
       ripgrep
@@ -30,11 +30,6 @@
       uv
       zsh
     ];
-  };
-  fonts = {
-    fontconfig = {
-      enable = true;
-    };
   };
   programs = {
     home-manager = {
