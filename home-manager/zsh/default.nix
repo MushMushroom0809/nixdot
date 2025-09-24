@@ -4,13 +4,11 @@
     zsh = {
       enable = true;
       enableCompletion = true;
-      autosuggestion = {
-        enable = true;
-      };
       syntaxHighlighting = {
         enable = true;
       };
       autosuggestion = {
+        enable = true;
         highlight = "fg=#ff00ff,bg=cyan,bold,underline";
         strategy = [ "history" "completion" "match_prev_cmd"];
       };
@@ -22,6 +20,9 @@
       };
       history = {
         path = "$HOME/.cache/zsh/history";
+      };
+      antidote = { # zsh plugin manager
+        enable = true;
       };
       oh-my-zsh = {
         enable = true;
@@ -48,6 +49,16 @@
             repo = "zsh-nix-shell";
             rev = "v0.8.0";
             sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
+          };
+        }
+        {
+          name = "enhancd";
+          file = "init.sh";
+          src = pkgs.fetchFromGitHub {
+            owner = "b4b4r07";
+            repo = "enhancd";
+            rev = "v2.2.1";
+            sha256 = "0iqa9j09fwm6nj5rpip87x3hnvbbz9w9ajgm6wkrd5fls8fn8i5g";
           };
         }
       ];
