@@ -20,6 +20,17 @@
         vim = "emacs -nw";
         tree = "lsd -al --tree";
       };
+      history = {
+        path = "$HOME/.cache/zsh/history";
+      };
+      oh-my-zsh = {
+        enable = true;
+        theme = "funky";
+        plugins = [
+          "git"
+          "history"
+        ];
+      };
     };
   };
 }
