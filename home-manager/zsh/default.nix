@@ -29,6 +29,14 @@
         plugins = [
           "git"
           "history"
+          "common-aliases"
+          "z"
+          "sudo"
+          "npm"
+          "node"
+          "python"
+          "rust"
+          "web-search"
         ];
       };
       plugins = [
