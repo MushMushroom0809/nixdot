@@ -8,10 +8,12 @@
     nerd-fonts.ubuntu-mono
     nerd-fonts.victor-mono
   ];
-  fonts.fontconfig = {
-    enable = true;
-    antialiasing = true;
-    hinting = "full";
-    subpixelRendering = "rgb";
+  fonts = {
+    fontconfig = {
+      enable = true;
+      antialiasing = true;
+      hinting = "full";
+      subpixelRendering = "rgb";
+    };
   };
 }
