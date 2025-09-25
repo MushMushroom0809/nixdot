@@ -26,7 +26,7 @@
       };
       oh-my-zsh = {
         enable = true;
-        theme = "theunraveler";
+        theme = "agnoster";
         plugins = [
           "git"
           "history"
