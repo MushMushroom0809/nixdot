@@ -13,9 +13,7 @@
 (use-package package
   :ensure nil
   :config
-  (when (or (featurep 'esup-child)
-            (daemonp)
-            noninteractive)
+  (when (or (featurep 'esup-child) (daemonp) noninteractive)
     (package-initialize))
   (setq package-check-signature nil)
   (setq package-quickstart t)
@@ -94,11 +92,13 @@
   :ensure nil
   :hook (prog-mode . hl-line-mode))
 
-(use-package loaddefs
+(use-package saveplace
   :ensure nil
-  :hook
-  (after-init . save-place-mode)
-  (prog-mode . electric-pair-mode))
+  :hook (after-init . save-place-mode))
+
+(use-package elec-pair
+  :ensure nil
+  :hook (prog-mode . electric-pair-mode))
 
 (use-package ibuffer
   :ensure nil
