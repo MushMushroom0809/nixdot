@@ -280,6 +280,9 @@
 (use-package markdown-mode)
 (use-package nix-mode)
 
+(use-package pet
+  :hook (python-base-mode . pet-mode))
+
 ;;; LSP & DAP
 (use-package lsp-mode
   :commands (lsp))
