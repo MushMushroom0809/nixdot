@@ -6,6 +6,7 @@
 }:
 {
   imports = [
+    ./alacritty
     ./fonts
     ./emacs
     ./zsh
@@ -28,7 +29,6 @@
       ripgrep
       ripgrep-all
       uv
-      zsh
     ];
   };
   programs = {

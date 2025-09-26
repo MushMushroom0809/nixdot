@@ -1,5 +1,12 @@
-{ pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [
+    zsh
+  ];
   programs = {
     zsh = {
       enable = true;
@@ -10,7 +17,11 @@
       autosuggestion = {
         enable = true;
         highlight = "fg=#ff00ff,bg=cyan,bold,underline";
-        strategy = [ "history" "completion" "match_prev_cmd"];
+        strategy = [
+          "history"
+          "completion"
+          "match_prev_cmd"
+        ];
       };
       shellAliases = {
         ls = "lsd";
@@ -21,7 +32,8 @@
       history = {
         path = "$HOME/.cache/zsh/history";
       };
-      antidote = { # zsh plugin manager
+      antidote = {
+        # zsh plugin manager
         enable = true;
       };
       oh-my-zsh = {
