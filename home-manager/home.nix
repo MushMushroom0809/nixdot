@@ -28,6 +28,7 @@
       nixfmt-rfc-style
       ripgrep
       ripgrep-all
+      tokei
       uv
     ];
   };
