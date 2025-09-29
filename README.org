@@ -1,0 +1,40 @@
+* Nix based configuration
+
+** macOS
+
+#+begin_src sh
+  # Install Nix package manager on macOS
+  sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
+
+  # Install nix-darwin command
+  sudo nix run nix-darwin --extra-experimental-features "nix-command flakes"  -- switch --flake ~/nixdot#m4pro
+
+  # Rebuild command
+  sudo darwin-rebuild --flake ~/nixdot#m4pro switch
+#+end_src
+
+** NixOS
+
+#+begin_src sh
+  # Rebuild command
+  sudo nixos-rebuild switch --flake ~/nixdot#nixos-vm
+#+end_src
+
+** home-manager
+
+Use standalone way to manage home-manager.
+
+#+begin_src sh
+  # Update nix channel.
+  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+  nix-channel --update
+
+  # Edit ~/.config/nix/nix.conf
+  echo "extra-experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+
+  # Install home-manager
+  nix-shell '<home-manager>' -A install
+
+  # Build command
+  home-manager switch --flake ~/nixdot#cya@m4pro
+#+end_src
