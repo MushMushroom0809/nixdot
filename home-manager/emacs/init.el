@@ -34,6 +34,10 @@
   (display-line-numbers 'relative)
   (tab-width 2))
 
+(use-package modus-themes
+  :ensure nil
+  :hook (after-init . (lambda () (load-theme 'modus-vivendi t))))
+
 (use-package startup
   :ensure nil
   :hook (emacs-startup . (lambda ()
