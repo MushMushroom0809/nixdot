@@ -15,6 +15,7 @@
     ./fonts
     ./git
     ./emacs
+    ./yazi
     ./zsh
   ];
   home = {
