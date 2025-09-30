@@ -42,6 +42,10 @@
             style = "Bold";
           };
           size = 12.0;
+          offset = {
+            x = 1;
+            y = 4;
+          };
         };
         bell = {
           animation = "EaseOutCubic";
@@ -60,7 +64,7 @@
           hide_when_typing = true;
         };
       };
-      theme = "tomorrow_night";
+      theme = "github_dark_high_contrast";
     };
   };
 }
