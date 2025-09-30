@@ -13,6 +13,7 @@
   imports = [
     ./alacritty
     ./fonts
+    ./git
     ./emacs
     ./zsh
   ];
@@ -27,7 +28,6 @@
       fastfetch
       fzf
       go
-      git
       lsd
       neofetch
       nixfmt-rfc-style
