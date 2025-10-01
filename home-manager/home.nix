@@ -13,9 +13,10 @@
   imports = [
     ./alacritty
     ./direnv
+    ./emacs
     ./fonts
     ./git
-    ./emacs
+    ./ripgrep
     ./yazi
     ./zsh
   ];
@@ -30,8 +31,6 @@
       lsd
       neofetch
       nixfmt-rfc-style
-      ripgrep
-      ripgrep-all
       tokei
       uv
     ];
