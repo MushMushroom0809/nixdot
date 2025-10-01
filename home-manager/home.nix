@@ -12,6 +12,7 @@
   };
   imports = [
     ./alacritty
+    ./direnv
     ./fonts
     ./git
     ./emacs
@@ -24,8 +25,6 @@
     stateVersion = "25.05";
     packages = with pkgs; [
       btop
-      direnv
-      emacs
       fastfetch
       fzf
       go
