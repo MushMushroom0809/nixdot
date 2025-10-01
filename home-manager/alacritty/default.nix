@@ -64,7 +64,7 @@
           hide_when_typing = true;
         };
       };
-      theme = "github_dark_high_contrast";
+      theme = "base16_default_dark";
     };
   };
 }
