@@ -27,7 +27,6 @@
       btop
       fastfetch
       fzf
-      go
       lsd
       neofetch
       nixfmt-rfc-style
