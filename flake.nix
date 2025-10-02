@@ -43,6 +43,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -54,6 +58,7 @@
       homebrew-core,
       homebrew-cask,
       home-manager,
+      nix-vscode-extensions,
       ...
     }:
     let
@@ -81,7 +86,10 @@
         "${username}@${darwinHost}" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-darwin;
           extraSpecialArgs = specialArgs;
-          modules = [ ./home-manager/home.nix ];
+          modules = [
+            { nixpkgs.overlays = [ nix-vscode-extensions.overlays.default ]; }
+            ./home-manager/home.nix
+          ];
         };
       };
     };

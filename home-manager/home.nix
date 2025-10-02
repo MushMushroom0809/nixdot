@@ -18,6 +18,7 @@
     ./fonts
     ./git
     ./ripgrep
+    ./vscode
     ./yazi
     ./zsh
   ];

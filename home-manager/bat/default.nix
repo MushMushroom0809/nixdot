@@ -14,7 +14,7 @@
         ];
         pager = "less -FR";
       };
-      extraPackages = with pkgs; [
+      extraPackages = with pkgs.bat-extras; [
         batdiff
         batman
         batgrep
