@@ -8,19 +8,16 @@
   imports = [
     inputs.nix-homebrew.darwinModules.nix-homebrew
   ];
-
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
     config = {
       allowUnfree = true;
     };
   };
-
   users.users."${username}" = {
     home = "/Users/${username}";
     description = "${username}";
   };
-
   system = {
     primaryUser = "${username}";
     stateVersion = 6;
@@ -31,17 +28,6 @@
         autohide-delay = 0.3;
         persistent-apps = [ ];
         orientation = "right";
-        wvous-tl-corner = 1;
-        wvous-tr-corner = 1;
-        wvous-bl-corner = 1;
-        wvous-br-corner = 1;
-      };
-      finder = {
-        AppleShowAllExtensions = true;
-        AppleShowAllFiles = true;
-        ShowPathbar = true;
-        ShowStatusBar = true;
-        _FXShowPosixPathInTitle = true;
       };
       trackpad = {
         ActuationStrength = 0;
@@ -49,21 +35,8 @@
         TrackpadRightClick = true;
         TrackpadThreeFingerDrag = true;
       };
-      NSGlobalDomain = {
-        NSAutomaticCapitalizationEnabled = false;
-        NSAutomaticDashSubstitutionEnabled = false;
-        NSAutomaticPeriodSubstitutionEnabled = false;
-        NSAutomaticQuoteSubstitutionEnabled = false;
-        NSAutomaticSpellingCorrectionEnabled = false;
-        NSNavPanelExpandedStateForSaveMode = true;
-      };
-      loginwindow = {
-        GuestEnabled = false;
-        SHOWFULLNAME = true;
-      };
     };
   };
-
   security = {
     pam = {
       services = {
@@ -73,7 +46,6 @@
       };
     };
   };
-
   nix = {
     enable = true;
     settings = {
@@ -86,13 +58,11 @@
       options = "--delete-older-than 7d";
     };
   };
-
   programs = {
     zsh = {
       enable = true;
     };
   };
-
   homebrew = {
     enable = true;
     onActivation = {
@@ -115,7 +85,6 @@
       "numbers" = 409203825;
     };
   };
-
   nix-homebrew = {
     enable = true;
     enableRosetta = true;

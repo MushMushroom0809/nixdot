@@ -28,13 +28,13 @@
           vscodevim.vim
         ];
         userSettings = {
-          "editor.fontSize" = 14;
+          "editor.fontSize" = 15;
           "editor.fontFamily" = "JetBrainsMono Nerd Font";
           "editor.fontLigatures" = true;
           "extensions.experimental.affinity" = {
             "vscodevim.vim" = 1;
           };
-          "window.zoomLevel" = -0.7;
+          "window.zoomLevel" = -0.75;
           "workbench.colorTheme" = "GitHub Dark Default";
           "vim.highlightedyank.enable" = true;
           "vim.hlsearch" = true;
