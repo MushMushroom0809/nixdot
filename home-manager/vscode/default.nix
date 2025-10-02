@@ -36,7 +36,10 @@
           "vim.hlsearch" = true;
           "vim.insertModeKeyBindingsNonRecursive" = [
             {
-              "before" = [ "j" "k" ];
+              "before" = [
+                "j"
+                "k"
+              ];
               "after" = [
                 "<Esc>"
               ];
