@@ -2,15 +2,68 @@
 {
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      vscode-marketplace.ms-python.python
-      vscode-marketplace.bbenoist.nix
-      open-vsx.jnoortheen.nix-ide
-    ];
-    userSettings = {
-      "editor.fontFamily" = "JetBrainsMono Nerd Font";
-      "editor.fontLigatures" = true;
-      # "workbench.colorTheme" = "Dracula";
+    profiles = {
+      default = {
+        extensions = with pkgs.vscode-extensions; [
+          bbenoist.nix
+          formulahendry.code-runner
+          github.github-vscode-theme
+          mechatroner.rainbow-csv
+          ms-python.black-formatter
+          ms-python.debugpy
+          ms-python.flake8
+          ms-python.python
+          ms-python.pylint
+          ms-python.mypy-type-checker
+          ms-python.vscode-pylance
+          ms-toolsai.jupyter
+          ms-toolsai.jupyter-renderers
+          ms-toolsai.jupyter-keymap
+          ms-toolsai.vscode-jupyter-slideshow
+          ms-toolsai.vscode-jupyter-cell-tags
+          vscodevim.vim
+        ];
+        userSettings = {
+          "editor.fontSize" = 14;
+          "editor.fontFamily" = "JetBrainsMono Nerd Font";
+          "editor.fontLigatures" = true;
+          "extensions.experimental.affinity" = {
+            "vscodevim.vim" = 1;
+          };
+          "window.zoomLevel" = -0.7;
+          "workbench.colorTheme" = "GitHub Dark Default";
+          "vim.highlightedyank.enable" = true;
+          "vim.hlsearch" = true;
+          "vim.insertModeKeyBindingsNonRecursive" = [
+            {
+              "before" = [ "j" "k" ];
+              "after" = [
+                "<Esc>"
+              ];
+            }
+          ];
+          "vim.normalModeKeyBindingsNonRecursive" = [
+            {
+              "before" = [
+                "K"
+              ];
+              "commands" = [
+                "editor.action.showHover"
+              ];
+            }
+            {
+              "before" = [
+                "g"
+                "d"
+              ];
+              "commands" = [
+                "editor.action.revealDefinition"
+              ];
+            }
+          ];
+          "vim.useSystemClipboard" = true;
+        };
+      };
     };
   };
 }

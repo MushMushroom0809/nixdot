@@ -86,10 +86,7 @@
         "${username}@${darwinHost}" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.aarch64-darwin;
           extraSpecialArgs = specialArgs;
-          modules = [
-            { nixpkgs.overlays = [ nix-vscode-extensions.overlays.default ]; }
-            ./home-manager/home.nix
-          ];
+          modules = [ ./home-manager/home.nix ];
         };
       };
     };
