@@ -21,6 +21,7 @@
         ];
       };
       shellAliases = {
+        cat = "bat";
         ls = "lsd";
         ff = "fastfetch";
         vim = "emacs -nw";

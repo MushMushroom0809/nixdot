@@ -12,6 +12,7 @@
   };
   imports = [
     ./alacritty
+    ./bat
     ./direnv
     ./emacs
     ./fonts
