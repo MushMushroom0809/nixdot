@@ -11,15 +11,9 @@
     };
   };
   imports = [
-    ./alacritty
-    ./bat
-    ./direnv
-    ./emacs
     ./fonts
     ./git
-    ./ripgrep
     ./vscode
-    ./yazi
     ./zsh
   ];
   home = {

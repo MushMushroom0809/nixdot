@@ -21,11 +21,9 @@
         ];
       };
       shellAliases = {
-        cat = "bat";
         ls = "lsd";
         ff = "fastfetch";
-        vim = "emacs -nw";
-        tree = "lsd -al --tree";
+        tree = "lsd --tree";
       };
       history = {
         path = "$HOME/.cache/zsh/history";
