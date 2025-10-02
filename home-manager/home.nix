@@ -21,13 +21,10 @@
     homeDirectory = if pkgs.stdenv.isDarwin then "/Users/${username}" else "/home/${username}";
     stateVersion = "25.05";
     packages = with pkgs; [
-      btop
       fastfetch
       fzf
       lsd
-      neofetch
       nixfmt-rfc-style
-      tokei
       uv
     ];
   };
