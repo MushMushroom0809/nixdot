@@ -26,6 +26,7 @@
           ms-toolsai.vscode-jupyter-slideshow
           ms-toolsai.vscode-jupyter-cell-tags
           vscodevim.vim
+          yzhang.markdown-all-in-one
         ];
         userSettings = {
           "editor.fontSize" = 15;
