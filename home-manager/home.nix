@@ -22,7 +22,6 @@
     stateVersion = "25.05";
     packages = with pkgs; [
       fastfetch
-      fzf
       lsd
       nixfmt-rfc-style
       uv
