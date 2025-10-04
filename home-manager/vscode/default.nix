@@ -71,6 +71,28 @@
           ];
           "vim.useSystemClipboard" = true;
         };
+        keybindings = [
+          {
+            "key" = "ctrl+h";
+            "command" = "workbench.action.navigateLeft";
+            "when" = "editorTextFocus";
+          }
+          {
+            "key" = "ctrl+l";
+            "command" = "workbench.action.navigateRight";
+            "when" = "editorTextFocus";
+          }
+          {
+            "key" = "ctrl+k";
+            "command" = "workbench.action.navigateUp";
+            "when" = "editorTextFocus";
+          }
+          {
+            "key" = "ctrl+j";
+            "command" = "workbench.action.navigateDown";
+            "when" = "editorTextFocus";
+          }
+        ];
       };
     };
   };
