@@ -1,6 +1,5 @@
 {
   description = "A configuration for both macOS and NixOS";
-
   nixConfig = {
     experimental-features = [
       "nix-command"
@@ -17,7 +16,6 @@
       "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
     ];
   };
-
   inputs = rec {
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -44,7 +42,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
   outputs =
     inputs@{
       self,

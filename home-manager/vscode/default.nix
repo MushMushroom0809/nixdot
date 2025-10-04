@@ -9,9 +9,13 @@
     profiles = {
       default = {
         extensions = with pkgs.vscode-extensions; [
+          aaron-bond.better-comments
           bbenoist.nix
           formulahendry.code-runner
           github.github-vscode-theme
+          gruntfuggly.todo-tree
+          jgclark.vscode-todo-highlight
+          llvm-vs-code-extensions.vscode-clangd
           mechatroner.rainbow-csv
           ms-python.black-formatter
           ms-python.debugpy
