@@ -10,11 +10,15 @@
       default = {
         extensions = with pkgs.vscode-extensions; [
           aaron-bond.better-comments
+          arrterian.nix-env-selector
           bbenoist.nix
+          brettm12345.nixfmt-vscode
           formulahendry.code-runner
           github.github-vscode-theme
           gruntfuggly.todo-tree
           jgclark.vscode-todo-highlight
+          jnoortheen.nix-ide
+          jeff-hykin.better-nix-syntax
           llvm-vs-code-extensions.vscode-clangd
           mechatroner.rainbow-csv
           ms-python.black-formatter
