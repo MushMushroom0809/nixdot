@@ -20,6 +20,7 @@
           ms-python.black-formatter
           ms-python.debugpy
           ms-python.flake8
+          ms-python.isort
           ms-python.python
           ms-python.pylint
           ms-python.mypy-type-checker
@@ -30,6 +31,7 @@
           ms-toolsai.vscode-jupyter-slideshow
           ms-toolsai.vscode-jupyter-cell-tags
           vscodevim.vim
+          xaver.clang-format
           yzhang.markdown-all-in-one
         ];
         userSettings = {
