@@ -12,7 +12,6 @@
           aaron-bond.better-comments
           arrterian.nix-env-selector
           bbenoist.nix
-          brettm12345.nixfmt-vscode
           formulahendry.code-runner
           github.github-vscode-theme
           gruntfuggly.todo-tree
