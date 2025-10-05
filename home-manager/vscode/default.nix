@@ -34,7 +34,6 @@
           ms-toolsai.vscode-jupyter-slideshow
           ms-toolsai.vscode-jupyter-cell-tags
           vscodevim.vim
-          xaver.clang-format
           yzhang.markdown-all-in-one
         ];
         userSettings = {
