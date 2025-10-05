@@ -23,6 +23,7 @@
     packages = with pkgs; [
       fastfetch
       lsd
+      nil
       nixfmt-rfc-style
       uv
     ];
