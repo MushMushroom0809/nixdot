@@ -33,8 +33,18 @@
           ms-toolsai.jupyter-keymap
           ms-toolsai.vscode-jupyter-slideshow
           ms-toolsai.vscode-jupyter-cell-tags
+          ms-vscode.remote-explorer
+          ms-vscode.live-server
+          redhat.vscode-yaml
+          redhat.vscode-xml
+          sumneko.lua
+          tamasfe.even-better-toml
+          vadimcn.vscode-lldb
+          vincaslt.highlight-matching-tag
           vscodevim.vim
+          vscode-icons-team.vscode-icons
           yzhang.markdown-all-in-one
+          zainchen.json
         ];
         userSettings = {
           "editor.fontSize" = 15;
@@ -47,6 +57,7 @@
           };
           "window.zoomLevel" = -0.75;
           "workbench.colorTheme" = "GitHub Dark Default";
+          "workbench.iconTheme" = "vscode-icons";
           "vim.highlightedyank.enable" = true;
           "vim.hlsearch" = true;
           "vim.insertModeKeyBindingsNonRecursive" = [
