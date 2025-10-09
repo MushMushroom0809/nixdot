@@ -11,6 +11,7 @@
     };
   };
   imports = [
+    ./alacritty
     ./fonts
     ./git
     ./vscode

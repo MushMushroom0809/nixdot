@@ -40,6 +40,8 @@
           "editor.fontSize" = 15;
           "editor.fontFamily" = "JetBrainsMono Nerd Font";
           "editor.fontLigatures" = true;
+          "editor.rulers" = [ 80 ];
+          "editor.guides.bracketPairs" = true;
           "extensions.experimental.affinity" = {
             "vscodevim.vim" = 1;
           };
