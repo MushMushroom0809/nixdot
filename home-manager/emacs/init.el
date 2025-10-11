@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+;;; BUILTIN
 (use-package use-package
   :ensure nil
   :custom
@@ -69,6 +70,7 @@
   (("M-n" . flymake-goto-next-error)
    ("M-p" . flymake-goto-prev-error)))
 
+;;; INSTALLED PACKAGES
 (use-package evil
   :hook (after-init . evil-mode))
 
