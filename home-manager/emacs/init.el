@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-;;; BUILTIN
+;;; BUILTIN PACKAGES
 (use-package use-package
   :ensure nil
   :custom
