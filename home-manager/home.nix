@@ -12,6 +12,7 @@
   };
   imports = [
     ./alacritty
+    ./direnv
     ./fonts
     ./git
     ./vscode
