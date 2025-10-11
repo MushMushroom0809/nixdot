@@ -15,6 +15,7 @@
     ./direnv
     ./fonts
     ./git
+    ./neovim
     ./vim
     ./vscode
     ./zsh
