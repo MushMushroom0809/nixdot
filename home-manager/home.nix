@@ -13,6 +13,7 @@
   imports = [
     ./alacritty
     ./direnv
+    ./emacs
     ./fonts
     ./git
     ./neovim
