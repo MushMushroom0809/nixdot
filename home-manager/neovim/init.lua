@@ -46,11 +46,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
+		-- LazyVim
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 		{ import = "lazyvim.plugins.extras.editor.illuminate" },
 		{ import = "lazyvim.plugins.extras.editor.navic" },
 		{ import = "lazyvim.plugins.extras.lang.clangd" },
 		{ import = "lazyvim.plugins.extras.lsp.none-ls" },
 		{ import = "lazyvim.plugins.extras.ui.treesitter-context" },
+		-- AstroNvim
+		-- {
+		-- 	"AstroNvim/AstroNvim",
+		-- 	version = "^5",
+		-- 	import = "astronvim.plugins",
+		-- },
+		-- { "AstroNvim/astrocommunity" },
+		-- { import = "astrocommunity.bars-and-lines.vim-illuminate" },
+		-- { import = "astrocommunity.pack.cpp" },
 	},
 })
