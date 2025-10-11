@@ -1,8 +1,9 @@
 -- OPTIONS
-
+vim.opt.autoread = true
+vim.opt.autowrite = false
 
 -- KEYBINGINDS
-
+vim.keymap.set("i", "jk", "<Esc>", { desc = "Back to normal mode" })
 
 -- AUTOCMD
 vim.api.nvim_create_autocmd("BufReadPost", {
@@ -12,7 +13,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		local last_line = vim.fn.line("'\"")
 		local total_lines = vim.fn.line("$")
 		if last_line > 1 and last_line <= total_lines then
-			vim.api.nvim_command("normal! g`\"")
+			vim.api.nvim_command('normal! g`"')
 		end
 	end,
 })
@@ -45,6 +46,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
-		{ 'LazyVim/LazyVim' }
+		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 	},
 })
