@@ -15,6 +15,7 @@
     ./direnv
     ./emacs
     ./fonts
+    ./helix
     ./git
     ./neovim
     ./vim
