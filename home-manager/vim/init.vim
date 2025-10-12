@@ -34,15 +34,6 @@ augroup END
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox', { 'on': [] }
-augroup ui_gruvbox
-	autocmd!
-	autocmd BufReadPost * call plug#load('gruvbox')
-				\| autocmd! ui_gruvbox
-				\| let g:gruvbox_contrast_dark = 'dark'
-				\| colorscheme gruvbox
-augroup END
-
 Plug 'tpope/vim-commentary', { 'on': [] }
 augroup tool_commentary
 	autocmd!

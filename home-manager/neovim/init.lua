@@ -1,6 +1,11 @@
 -- OPTIONS
 vim.opt.autoread = true
 vim.opt.autowrite = false
+vim.opt.colorcolumn = "80"
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.undofile = false
 
 -- KEYBINGINDS
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Back to normal mode" })

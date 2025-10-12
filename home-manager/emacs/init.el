@@ -41,7 +41,6 @@
   (defun setup-fonts ()
     "Setup fonts."
     (when (display-graphic-p)
-      ;; Set default font
       (cl-loop for font in '("JetbrainsMono Nerd Font"
 			     "Menlo"
 			     "Hack"
@@ -114,13 +113,6 @@
 (use-package display-fill-column-indicator
   :ensure nil
   :hook (prog-mode . display-fill-column-indicator-mode))
-
-(use-package flymake
-  :ensure nil
-  :hook (prog-mode . flymake-mode)
-  :bind
-  (("M-n" . flymake-goto-next-error)
-   ("M-p" . flymake-goto-prev-error)))
 
 ;;; INSTALLED PACKAGES
 (use-package evil
