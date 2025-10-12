@@ -2,10 +2,6 @@
 vim.opt.autoread = true
 vim.opt.autowrite = false
 vim.opt.colorcolumn = "80"
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.undofile = false
 
 -- KEYBINGINDS
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Back to normal mode" })
@@ -20,16 +16,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		if last_line > 1 and last_line <= total_lines then
 			vim.api.nvim_command('normal! g`"')
 		end
-	end,
-})
-vim.api.nvim_create_autocmd("TextYankPost", {
-	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank({
-			higroup = "IncSearch",
-			timeout = 1000,
-		})
 	end,
 })
 
