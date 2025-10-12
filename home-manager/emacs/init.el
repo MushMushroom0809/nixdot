@@ -34,6 +34,54 @@
           (horizontal-scroll-bars)
           (vertical-scroll-bars))))
 
+(use-package faces
+  :ensure nil
+  :hook (after-init . setup-fonts)
+  :config
+  (defun setup-fonts ()
+    "Setup fonts."
+    (when (display-graphic-p)
+      ;; Set default font
+      (cl-loop for font in '("JetbrainsMono Nerd Font"
+			     "Menlo"
+			     "Hack"
+			     "Monaco")
+	       when (find-font (font-spec :name font))
+	       return (set-face-attribute 'default nil
+					  :family font
+					  :height (cond ((eq system-type 'darwin) 140)
+							((eq system-type 'windows-nt) 110)
+							(t 100))))
+      (cl-loop for font in '("JetbrainsMono Nerd Font"
+                             "Menlo"
+			     "Hack"
+                             "Monaco")
+	       when (find-font (font-spec :name font))
+               return (progn
+                        (set-face-attribute 'mode-line nil :family font :height 140)
+                        (when (facep 'mode-line-active)
+                          (set-face-attribute 'mode-line-active nil :family font :height 140))
+                        (set-face-attribute 'mode-line-inactive nil :family font :height 140)))
+      (cl-loop for font in '("Apple Symbols"
+			     "Segoe UI Symbol"
+			     "Symbola"
+			     "Symbol")
+	       when (find-font (font-spec :name font))
+               return (set-fontset-font t 'symbol (font-spec :family font) nil 'prepend))
+      (cl-loop for font in '("Noto Color Emoji" "Apple Color Emoji" "Segoe UI Emoji")
+	       when (find-font (font-spec :name font))
+               return (set-fontset-font t 'emoji (font-spec :family font) nil 'prepend))
+      (cl-loop for font in '("LXGW Neo Xihei"
+			     "LXGW WenKai Mono"
+			     "WenQuanYi Micro Hei Mono"
+                             "PingFang SC"
+			     "Microsoft Yahei UI"
+			     "Simhei")
+	       when (find-font (font-spec :name font))
+               return (progn
+                        (setq face-font-rescale-alist `((,font . 1.3)))
+                        (set-fontset-font t 'han (font-spec :family font)))))))
+
 (use-package cus-edit
   :ensure nil
   :custom
@@ -63,6 +111,10 @@
   :ensure nil
   :hook (prog-mode . display-line-numbers-mode))
 
+(use-package display-fill-column-indicator
+  :ensure nil
+  :hook (prog-mode . display-fill-column-indicator-mode))
+
 (use-package flymake
   :ensure nil
   :hook (prog-mode . flymake-mode)
@@ -79,6 +131,17 @@
   :config
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.2))
+
+(use-package evil-nerd-commenter
+  :after (evil)
+  :bind
+  (:map evil-normal-state-map
+	("gcc" . evilnc-comment-or-uncomment-lines))
+  (:map evil-visual-state-map
+	("gc" . evilnc-comment-or-uncomment-lines)))
+
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 (provide 'init)
 ;;; init.el ends here
