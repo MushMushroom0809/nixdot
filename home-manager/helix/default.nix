@@ -11,6 +11,7 @@
       settings = {
         theme = "github_dark_high_contrast";
         editor = {
+          rainbow-brackets = true;
           bufferline = "always";
           text-width = 80;
           rulers = [ 80 ];
