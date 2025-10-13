@@ -31,7 +31,6 @@
       lsd
       nil
       nixfmt-rfc-style
-      uv
     ];
   };
   programs = {

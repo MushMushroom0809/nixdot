@@ -21,6 +21,7 @@
             jeff-hykin.better-nix-syntax
             llvm-vs-code-extensions.vscode-clangd
             mechatroner.rainbow-csv
+            mkhl.direnv
             ms-python.black-formatter
             ms-python.debugpy
             ms-python.flake8
