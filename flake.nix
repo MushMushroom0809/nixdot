@@ -77,5 +77,16 @@
           modules = [ ./home-manager/home.nix ];
         };
       };
+      devShells = {
+        aarch64-darwin.c_cpp = import ./shell/c_cpp.nix {
+          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        };
+        aarch64-darwin.py312 = import ./shell/python312.nix {
+          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        };
+        aarch64-darwin.node24 = import ./shell/node24.nix {
+          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        };
+      };
     };
 }
