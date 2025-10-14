@@ -39,6 +39,7 @@
             ms-vscode.test-adapter-converter
             ms-vscode.remote-explorer
             ms-vscode.live-server
+            ms-vscode.makefile-tools
             redhat.vscode-yaml
             redhat.vscode-xml
             sumneko.lua
