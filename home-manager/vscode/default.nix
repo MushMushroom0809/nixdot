@@ -41,6 +41,7 @@
             ms-vscode.live-server
             ms-vscode.makefile-tools
             ms-vscode.hexeditor
+            ms-vscode.anycode
             redhat.vscode-yaml
             redhat.vscode-xml
             sumneko.lua
