@@ -36,6 +36,7 @@
             ms-toolsai.vscode-jupyter-slideshow
             ms-toolsai.vscode-jupyter-cell-tags
             ms-toolsai.datawrangler
+            ms-vscode.test-adapter-converter
             ms-vscode.remote-explorer
             ms-vscode.live-server
             redhat.vscode-yaml
