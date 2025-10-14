@@ -40,6 +40,7 @@
             ms-vscode.remote-explorer
             ms-vscode.live-server
             ms-vscode.makefile-tools
+            ms-vscode.hexeditor
             redhat.vscode-yaml
             redhat.vscode-xml
             sumneko.lua
