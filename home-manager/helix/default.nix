@@ -9,7 +9,7 @@
       enable = true;
       defaultEditor = false;
       settings = {
-        theme = "github_dark_high_contrast";
+        theme = "github_dark";
         editor = {
           bufferline = "always";
           text-width = 80;
