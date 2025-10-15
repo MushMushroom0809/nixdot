@@ -19,6 +19,7 @@
     ./git
     ./kakoune
     ./neovim
+    ./tmux
     ./vim
     ./vscode
     ./zsh
