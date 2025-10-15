@@ -17,6 +17,7 @@
     ./fonts
     ./helix
     ./git
+    ./kakoune
     ./neovim
     ./vim
     ./vscode
