@@ -61,6 +61,7 @@
             "editor.fontLigatures" = true;
             "editor.rulers" = [ 80 ];
             "editor.guides.bracketPairs" = true;
+            "editor.minimap.enabled" = false;
             "extensions.experimental.affinity" = {
               "vscodevim.vim" = 1;
             };
@@ -115,7 +116,7 @@
             "catppuccin.bracketMode" = "dimmed";
             "catppuccin.customUIColors" = {
               "mocha" = {
-                "minimap.background" = "rosewater 0.2";
+                "editorLineNumber.foreground" = "green";
               };
             };
             "catppuccin.extraBordersEnabled" = true;
@@ -123,10 +124,10 @@
             "catppuccin-icons.hidesExplorerArrows" = true;
             "catppuccin-icons.specificFolders" = true;
             "catppuccin-icons.monochrome" = true;
-            "catppuccin-icons.associations.extensions" = {};
-            "catppuccin-icons.associations.files" = {};
-            "catppuccin-icons.associations.folders" = {};
-            "catppuccin-icons.associations.languages" = {};
+            "catppuccin-icons.associations.extensions" = { };
+            "catppuccin-icons.associations.files" = { };
+            "catppuccin-icons.associations.folders" = { };
+            "catppuccin-icons.associations.languages" = { };
           };
           keybindings = [
             {
