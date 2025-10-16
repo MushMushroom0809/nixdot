@@ -13,6 +13,8 @@
             aaron-bond.better-comments
             arrterian.nix-env-selector
             bbenoist.nix
+            catppuccin.catppuccin-vsc
+            catppuccin.catppuccin-vsc-icons
             formulahendry.code-runner
             github.github-vscode-theme
             gruntfuggly.todo-tree
@@ -63,7 +65,7 @@
               "vscodevim.vim" = 1;
             };
             "window.zoomLevel" = -0.75;
-            "workbench.colorTheme" = "GitHub Dark Default";
+            "workbench.colorTheme" = "Catppuccin Mocha";
             "workbench.iconTheme" = "vscode-icons";
             "vim.highlightedyank.enable" = true;
             "vim.hlsearch" = true;
@@ -98,6 +100,33 @@
               }
             ];
             "vim.useSystemClipboard" = true;
+            "catppuccin.accentColor" = "blue";
+            "catppuccin.colorOverrides" = {
+              "mocha" = {
+                "base" = "#11111b";
+                "mantle" = "#11111b";
+                "crust" = "#11111b";
+              };
+            };
+            "catppuccin.italicComments" = true;
+            "catppuccin.italicKeywords" = true;
+            "catppuccin.boldKeywords" = true;
+            "catppuccin.workbenchMode" = "flat";
+            "catppuccin.bracketMode" = "dimmed";
+            "catppuccin.customUIColors" = {
+              "mocha" = {
+                "minimap.background" = "rosewater 0.2";
+              };
+            };
+            "catppuccin.extraBordersEnabled" = true;
+            "catppuccin.syncWithIconPack" = true;
+            "catppuccin-icons.hidesExplorerArrows" = true;
+            "catppuccin-icons.specificFolders" = true;
+            "catppuccin-icons.monochrome" = true;
+            "catppuccin-icons.associations.extensions" = {};
+            "catppuccin-icons.associations.files" = {};
+            "catppuccin-icons.associations.folders" = {};
+            "catppuccin-icons.associations.languages" = {};
           };
           keybindings = [
             {
