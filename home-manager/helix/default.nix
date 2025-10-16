@@ -9,7 +9,7 @@
       enable = true;
       defaultEditor = false;
       settings = {
-        theme = "github_dark";
+        theme = "catppuccin_mocha";
         editor = {
           bufferline = "always";
           text-width = 80;
