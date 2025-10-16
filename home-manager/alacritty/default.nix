@@ -53,7 +53,7 @@
           hide_when_typing = true;
         };
       };
-      theme = "github_dark_high_contrast";
+      theme = "catppuccin_mocha";
     };
   };
 }
