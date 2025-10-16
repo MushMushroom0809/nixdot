@@ -67,7 +67,7 @@
             };
             "window.zoomLevel" = -0.75;
             "workbench.colorTheme" = "Catppuccin Mocha";
-            "workbench.iconTheme" = "vscode-icons";
+            "workbench.iconTheme" = "catppuccin-mocha";
             "vim.highlightedyank.enable" = true;
             "vim.hlsearch" = true;
             "vim.insertModeKeyBindingsNonRecursive" = [
@@ -116,7 +116,7 @@
             "catppuccin.bracketMode" = "dimmed";
             "catppuccin.customUIColors" = {
               "mocha" = {
-                "editorLineNumber.foreground" = "green";
+                "editorLineNumber.activeForeground" = "green";
               };
             };
             "catppuccin.extraBordersEnabled" = true;
