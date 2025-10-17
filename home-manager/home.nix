@@ -8,6 +8,7 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
+      allowBroken = true;
     };
   };
   imports = [
@@ -18,10 +19,12 @@
     ./helix
     ./git
     ./kakoune
+    ./kitty
     ./neovim
     ./tmux
     ./vim
     ./vscode
+    ./wezterm
     ./zsh
   ];
   home = {
