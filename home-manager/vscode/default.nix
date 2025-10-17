@@ -60,6 +60,7 @@
             "editor.fontFamily" = "JetBrainsMono Nerd Font";
             "editor.fontLigatures" = true;
             "editor.rulers" = [ 80 ];
+            "editor.lineNumbers" = "relative";
             "editor.guides.bracketPairs" = true;
             "editor.minimap.enabled" = false;
             "extensions.experimental.affinity" = {
