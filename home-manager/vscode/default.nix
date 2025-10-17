@@ -117,6 +117,7 @@
             "catppuccin.customUIColors" = {
               "mocha" = {
                 "editorLineNumber.activeForeground" = "green";
+                "widget.border" = "accent";
               };
             };
             "catppuccin.extraBordersEnabled" = true;
