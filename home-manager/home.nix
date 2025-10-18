@@ -14,13 +14,9 @@
   imports = [
     ./alacritty
     ./direnv
-    ./emacs
     ./fonts
-    ./helix
     ./git
-    ./neovim
     ./tmux
-    ./vim
     ./vscode
     ./zsh
   ];
