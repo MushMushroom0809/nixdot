@@ -56,7 +56,7 @@
             zainchen.json
           ];
           userSettings = {
-            "editor.fontSize" = 15;
+            "editor.fontSize" = 14;
             "editor.fontFamily" = "JetBrainsMono Nerd Font";
             "editor.fontLigatures" = true;
             "editor.rulers" = [ 80 ];
@@ -66,9 +66,10 @@
             "extensions.experimental.affinity" = {
               "vscodevim.vim" = 1;
             };
-            "window.zoomLevel" = -0.75;
+            "window.zoomLevel" = -0.70;
             "workbench.colorTheme" = "Catppuccin Mocha";
             "workbench.iconTheme" = "catppuccin-mocha";
+            "workbench.startupEditor" = "none";
             "vim.highlightedyank.enable" = true;
             "vim.hlsearch" = true;
             "vim.insertModeKeyBindingsNonRecursive" = [
