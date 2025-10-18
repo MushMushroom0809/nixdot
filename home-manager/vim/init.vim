@@ -17,7 +17,9 @@ imap jk <Esc>
 
 " AUTOCMD
 augroup restore_last_position
-	autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute "normal! g`\""|endif
+	autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+				\| execute "normal! g`\""
+				\| endif
 				\| autocmd! restore_last_position
 augroup END
 
@@ -25,10 +27,14 @@ augroup END
 " PLUGINS
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent execute '!curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	autocmd VimEnter * PlugInstall --sync|source $MYVIMRC
+	autocmd VimEnter * PlugInstall --sync
+				\| source $MYVIMRC
 endif
 augroup install_missing_pkgs
-	autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))|PlugInstall --sync|source $MYVIMRC|endif
+	autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+				\| PlugInstall --sync
+				\| source $MYVIMRC
+				\| endif
 				\| autocmd! install_missing_pkgs
 augroup END
 

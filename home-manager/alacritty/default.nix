@@ -36,6 +36,10 @@
             style = "Bold";
           };
           size = 12.0;
+          offset = {
+            x = 0;
+            y = 2;
+          };
         };
         bell = {
           animation = "EaseOut";
@@ -51,6 +55,11 @@
         };
         mouse = {
           hide_when_typing = true;
+        };
+        colors = {
+          primary = {
+            background = "#11111b";
+          };
         };
       };
       theme = "catppuccin_mocha";

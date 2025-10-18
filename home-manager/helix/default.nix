@@ -9,7 +9,7 @@
       enable = true;
       defaultEditor = false;
       settings = {
-        theme = "catppuccin_mocha";
+        theme = "catppuccin_mocha_dark";
         editor = {
           bufferline = "always";
           text-width = 80;
@@ -125,6 +125,14 @@
               "keep_primary_selection"
               "normal_mode"
             ];
+          };
+        };
+      };
+      themes = {
+        catppuccin_mocha_dark = {
+          inherits = "catppuccin_mocha";
+          palette = {
+            base = "#11111b";
           };
         };
       };
