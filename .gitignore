@@ -1,0 +1,17 @@
+result
+.DS_Store
+home-manager/emacs/custom.el
+home-manager/emacs/package-quickstart.el
+home-manager/emacs/places
+home-manager/emacs/snippets
+home-manager/emacs/transient
+home-manager/emacs/elpa
+home-manager/emacs/eln-cache
+home-manager/emacs/flycheck_init.el
+home-manager/nvim/lazy-lock.json
+home-manager/nvim/lazyvim.json
+home-manager/vim/autoload
+home-manager/vim/plugged
+*.elc
+*.eln
+*~
