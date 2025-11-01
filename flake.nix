@@ -36,6 +36,7 @@
         modules = [ ./home-manager/home.nix ];
       };
       devShells.aarch64-darwin = {
+        nodejs = import ./shell/nodejs.nix { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
         python = import ./shell/python.nix { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
         r = import ./shell/r.nix { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
       };
