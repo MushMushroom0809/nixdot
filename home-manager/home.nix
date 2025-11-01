@@ -8,8 +8,10 @@
   nixpkgs.config.allowUnfree = true;
   imports = [
     ./alacritty
+    ./btop
     ./direnv
     ./emacs
+    ./fastfetch
     ./fonts
     ./fzf
     ./helix
@@ -26,6 +28,9 @@
   home.stateVersion = "25.05";
   home.packages = with pkgs; [
     nixfmt
+    p7zip
+    unzip
+    zip
   ];
   programs.home-manager.enable = true;
 }

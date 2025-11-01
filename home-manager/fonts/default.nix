@@ -2,11 +2,23 @@
 {
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.symbols-only
     nerd-fonts.noto
-    noto-fonts
+    nerd-fonts.mononoki
+    nerd-fonts.hack
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-color-emoji
+    source-sans
+    source-serif
+    source-han-sans
+    source-han-serif
+    source-han-mono
+    lxgw-wenkai
+    lxgw-neoxihei
+    lxgw-wenkai-tc
+    lxgw-wenkai-screen
   ];
   fonts.fontconfig.enable = true;
   fonts.fontconfig.antialiasing = true;
