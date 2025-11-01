@@ -6,7 +6,7 @@ pkgs.mkShell {
     gcc
     clang
     cmake
-    make
+    gnumake
     autoconf
     automake
     libtool
@@ -16,14 +16,11 @@ pkgs.mkShell {
     clang-tools
   ];
   shellHook = ''
-    # 歡迎訊息
     echo ""
     echo "--------------------------------------------"
     echo "- Welcome to C/C++ development environment -"
     echo "--------------------------------------------"
     echo ""
-
-    # 設定 CXXFLAGS 環境變數來指定 C++11 標準
     export CXXFLAGS="$CXXFLAGS -std=c++11"
   '';
 }
